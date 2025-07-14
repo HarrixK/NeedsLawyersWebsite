@@ -222,7 +222,6 @@ textarea.form-control {
   }
 
   .form-row {
-    grid-template-columns: 1fr;
     gap: 1rem;
   }
 

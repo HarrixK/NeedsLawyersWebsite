@@ -29,7 +29,7 @@
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 2rem;
   font-weight: 400;
   color: #fff;
@@ -296,7 +296,7 @@ p {
   }
   
   h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   
   .carousel-container {
@@ -312,7 +312,6 @@ p {
   
   
   .carousel-header {
-    justify-content: center; /* Center header content */
     text-align: center;
     margin-bottom: 2rem;
   }
@@ -327,14 +326,14 @@ p {
   }
   
   .carousel-content {
-    flex-direction: column;
+    flex-direction: row-reverse;
     gap: 1rem;
     align-items: center;
     text-align: center; /* Center all content */
   }
   
   .lawyer-profiles {
-    width: 100px;
+    width: 125px;
     height: 80px;
     margin: 0 auto; /* Center profiles */
   }
@@ -357,8 +356,8 @@ p {
   }
   
   .carousel-navigation {
-    bottom: 1rem;
-    left: 50%;
+    bottom: 0.5rem;
+    left: 10%;
     transform: translateX(-50%); /* Center navigation button */
   }
 }
