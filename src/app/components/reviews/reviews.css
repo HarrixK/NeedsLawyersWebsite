@@ -1,0 +1,400 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.reviews-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  direction: rtl;
+  position: relative;
+  display: flex;
+  gap: 5rem;
+}
+
+.section-badge {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background-color: transparent;
+  color: #CEAB63;
+  font-size: 3rem;
+  font-weight: 400;
+  align-items: start;
+  margin-bottom: 2rem;
+  float: none;
+  margin-right: 2rem;
+}
+
+.reviews-header h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.2;
+  margin: 0;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.reviews-header .highlight {
+  color: #CEAB63;
+}
+
+.reviews-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.carousel-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #CEAB63;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.carousel-btn:hover {
+  background-color: #b8901a;
+  /* transform: scale(1.1); */
+}
+
+.carousel-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.prev-btn {
+  order: -1;
+}
+
+.next-btn {
+  order: 1;
+}
+
+.reviews-grid-container {
+  flex: 1;
+  overflow: hidden;
+}
+
+.reviews-grid {
+  display: flex;
+  transition: transform 0.3s ease;
+  gap: 2rem;
+}
+
+.review-card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); */
+  transition: transform 0.3s ease;
+  min-width: calc(25% - 1.5rem);
+  flex-shrink: 0;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+.lawyer-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 1.5rem;
+  border: 4px solid #f0f0f0;
+}
+
+.lawyer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.review-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.location {
+  font-size: 1rem;
+  color: #CEAB63;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.rating-score {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+}
+
+.stars svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Responsive Design */
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  .reviews {
+    padding: 3rem 0;
+  }
+  
+  .reviews-header {
+    margin-bottom: 2.5rem;
+  }
+  
+  .reviews-header h2 {
+    font-size: 2.5rem;
+  }
+  
+  .section-badge {
+    font-size: 2.5rem;
+  }
+  
+  .reviews-carousel {
+    gap: 1.5rem;
+  }
+  
+  .review-card {
+    min-width: calc(33.333% - 1.33rem);
+    padding: 1.5rem;
+  }
+  
+  .lawyer-image {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .review-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .location {
+    font-size: 0.9rem;
+  }
+  
+  .rating-score {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .reviews {
+    padding: 2rem 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .reviews-header {
+    margin-bottom: 2rem;
+  }
+  
+  .reviews-header h2 {
+    font-size: 2rem;
+  }
+  
+  .section-badge {
+    font-size: 2rem;
+  }
+  
+  .reviews-carousel {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .carousel-btn {
+    display: none;
+  }
+  
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .review-card {
+    min-width: auto;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid rgba(206, 171, 99, 0.2);
+  }
+  
+  .lawyer-image {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1rem;
+  }
+  
+  .review-card h3 {
+    font-size: 1.2rem;
+  }
+  
+  .location {
+    font-size: 0.95rem;
+  }
+  
+  .rating-score {
+    font-size: 0.95rem;
+  }
+  
+  .stars svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 576px) {
+  .reviews {
+    padding: 1.5rem 0;
+  }
+  
+  .reviews-header {
+    margin-bottom: 1.5rem;
+  }
+  
+  .reviews-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .section-badge {
+    font-size: 1.8rem;
+  }
+  
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .review-card {
+    padding: 1rem;
+  }
+  
+  .lawyer-image {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .review-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .location {
+    font-size: 0.9rem;
+  }
+  
+  .rating-score {
+    font-size: 0.9rem;
+  }
+  
+  .stars svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 480px) {
+  .reviews-header h2 {
+    font-size: 1.6rem;
+  }
+  
+  .section-badge {
+    font-size: 1.6rem;
+  }
+  
+  .review-card {
+    padding: 0.8rem;
+  }
+  
+  .lawyer-image {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .review-card h3 {
+    font-size: 1rem;
+  }
+  
+  .location {
+    font-size: 0.85rem;
+  }
+  
+  .rating-score {
+    font-size: 0.85rem;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+  .reviews {
+    padding: 5rem 0;
+  }
+  
+  .reviews-header h2 {
+    font-size: 3.5rem;
+  }
+  
+  .section-badge {
+    font-size: 3.5rem;
+  }
+  
+  .review-card {
+    min-width: calc(20% - 1.6rem);
+  }
+  
+  .lawyer-image {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .review-card h3 {
+    font-size: 1.6rem;
+  }
+  
+  .location {
+    font-size: 1.2rem;
+  }
+  
+  .rating-score {
+    font-size: 1.2rem;
+  }
+  
+  .stars svg {
+    width: 18px;
+    height: 18px;
+  }
+}

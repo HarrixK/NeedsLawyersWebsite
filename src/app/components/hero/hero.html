@@ -1,0 +1,64 @@
+<section class="hero" dir="rtl">
+  <div class="container mt-5">
+    <div>
+      <h1>احصل على استشارة قانونية <br>
+        من <span class="primary-color">المحامي المختص</span>
+      </h1>
+      <p class="mb-5">
+        مرحبًا بكم في "Needs Lawyer", حيث تعتبر احتياجاتك القانونية أولويتنا القصوى. فريقنا من المحامين ذوي
+        الخبرة ملتزم بتقديم استشارات قانونية شاملة تجيب بشكل فوري على احتياجاتك القانونيّة.
+      </p>
+      <div>
+        <button routerLink="/contact" class="cta-button ms-3">المحامون</button>
+        <button routerLink="/services" class="secondary-button">حمل التطبيق الآن</button>
+      </div>
+    </div>
+
+    <!-- Carousel Section -->
+    <div class="carousel-container mt-5" dir="ltr">
+      <div class="carousel-wrapper">
+        <div class="carousel-header">
+          <h2>المحامون<br>المتميزون</h2>
+          <div class="carousel-controls">
+            <button class="carousel-btn prev" (click)="previousSlide()">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+            <button class="carousel-btn next" (click)="nextSlide()">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="carousel-content">
+          <div class="lawyer-profiles">
+            <div class="profile-image" *ngFor="let lawyer of lawyers; let i = index"
+              [class.active]="i === currentSlide()"
+              [style.transform]="'translateY(' + (i - currentSlide()) * 20 + 'px) translateX(' + (i - currentSlide()) * 8 + 'px)'">
+              <img [src]="lawyer.image" [alt]="lawyer.name" />
+            </div>
+          </div>
+
+          <div class="lawyer-info">
+            <p class="intro-text">تعرف<br>على فريقنا</p>
+            <div class="lawyer-details">
+              <h3>{{ lawyers[currentSlide()].name }}</h3>
+              <p>{{ lawyers[currentSlide()].specialty }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-navigation">
+          <button class="nav-arrow" (click)="nextSlide()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14m-7-7l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
