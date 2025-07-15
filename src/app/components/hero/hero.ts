@@ -9,7 +9,7 @@ import { Component, signal } from '@angular/core';
 export class Hero {
   isLoading = signal(false);
   currentSlide = signal(0);
-  language: 'ar' | 'en' = 'en';
+  language: 'ar' | 'en' = 'ar';
 
   lawyers = [
     {

@@ -12,6 +12,10 @@ import { Footer } from './components/footer/footer';
 import { NgOptimizedImage } from '@angular/common';
 import { Cta } from './components/cta/cta';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PrivacyPolicy } from './components/privacy-policy/privacy-policy';
+import { AppRoutingModule } from './app-routing-module';
+import { Layout } from './layout/layout';
+import { Home } from './components/home/home';
 
 @NgModule({
   declarations: [
@@ -23,13 +27,17 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     Reviews,
     ContactUs,
     Footer,
-    Cta
+    Cta,
+    PrivacyPolicy,
+    Layout,
+    Home,
   ],
   imports: [
     BrowserModule,
     NgOptimizedImage,
     FormsModule,
     ReactiveFormsModule,
+    AppRoutingModule,
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
