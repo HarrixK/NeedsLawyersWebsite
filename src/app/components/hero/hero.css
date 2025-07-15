@@ -162,11 +162,11 @@ p {
   flex-direction: row-reverse;
   align-items: center;
   gap: 1.5rem;
+  z-index: 2;
   margin-bottom: 1.5rem;
   position: relative;
-  z-index: 2;
 }
-
+ 
 .lawyer-profiles {
   position: relative;
   width: 160px;
