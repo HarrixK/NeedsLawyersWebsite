@@ -181,7 +181,10 @@
   }
   
   .features-header h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+  .section-badge{
+    font-size: 1.5rem;
   }
   
   .features-content {
@@ -235,12 +238,12 @@
   }
   
   .features-header h2 {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
   
   .section-badge {
     padding: 0.4rem 1rem;
-    font-size: 1.8rem;
+    font-size: 1rem;
   }
   
   .features-content {
@@ -269,7 +272,7 @@
 /* Extra Small Mobile */
 @media (max-width: 480px) {
   .features-header h2 {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
   
   .feature-item {

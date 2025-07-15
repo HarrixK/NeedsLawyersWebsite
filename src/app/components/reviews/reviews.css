@@ -328,11 +328,11 @@
 /* Extra Small Mobile */
 @media (max-width: 480px) {
   .reviews-header h2 {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
   
   .section-badge {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
   }
   
   .review-card {

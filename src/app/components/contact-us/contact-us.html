@@ -3,18 +3,18 @@
     <div class="card border-0" dir="rtl">
       <div class="card-body">
         <h2 class="text-end">تواصل معنا</h2>
-        <form class="contact-form" action="#" method="post" [formGroup]="contactForm">
+        <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
           <div class="form-row">
             <div class="form-group">
               <input type="text" id="firstName" formControlName="firstName" class="form-control"
-                [class.is-invalid]="isFieldInvalid('firstName')" placeholder="أدخل الاسم الأول">
+                [class.is-invalid]="isFieldInvalid('firstName')" placeholder="الاسم الأول">
               <div class="invalid-feedback" *ngIf="isFieldInvalid('firstName')">
                 {{ getErrorMessage('firstName') }}
               </div>
             </div>
             <div class="form-group">
               <input type="text" id="lastName" formControlName="lastName" class="form-control"
-                [class.is-invalid]="isFieldInvalid('lastName')" placeholder="أدخل الاسم الأخير">
+                [class.is-invalid]="isFieldInvalid('lastName')" placeholder="الاسم الأخير">
               <div class="invalid-feedback" *ngIf="isFieldInvalid('lastName')">
                 {{ getErrorMessage('lastName') }}
               </div>
@@ -23,14 +23,14 @@
           <div class="form-row">
             <div class="form-group">
               <input type="email" id="email" formControlName="email" class="form-control"
-                [class.is-invalid]="isFieldInvalid('email')" placeholder="أدخل البريد الإلكتروني">
+                [class.is-invalid]="isFieldInvalid('email')" placeholder="البريد الإلكتروني">
               <div class="invalid-feedback" *ngIf="isFieldInvalid('email')">
                 {{ getErrorMessage('email') }}
               </div>
             </div>
             <div class="form-group">
               <input type="tel" id="phone" formControlName="phone" class="form-control"
-                [class.is-invalid]="isFieldInvalid('phone')" placeholder="أدخل رقم الهاتف">
+                [class.is-invalid]="isFieldInvalid('phone')" placeholder="رقم الهاتف">
               <div class="invalid-feedback" *ngIf="isFieldInvalid('phone')">
                 {{ getErrorMessage('phone') }}
               </div>
@@ -38,18 +38,16 @@
           </div>
           <div class="form-group full-width">
             <textarea id="message" formControlName="message" class="form-control"
-              [class.is-invalid]="isFieldInvalid('message')" placeholder="أدخل رسالتك" rows="4"></textarea>
+              [class.is-invalid]="isFieldInvalid('message')" placeholder="رسالتك" rows="4"></textarea>
             <div class="invalid-feedback" *ngIf="isFieldInvalid('message')">
               {{ getErrorMessage('message') }}
             </div>
           </div>
           <div class="form-actions">
-<button 
-    type="submit" 
-    class="btn btn-primary"
-    [disabled]="contactForm.invalid && submitted">
-    إرسال الرسالة
-  </button>            <button type="button" class="btn-secondary">تفريغ الحقول</button>
+            <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid && submitted">
+              إرسال الرسالة
+            </button>
+            <button type="button" class="btn-secondary" (click)="clearForm()">تفريغ الحقول</button>
           </div>
         </form>
       </div>

@@ -57,7 +57,7 @@
   font-size: 1rem;
   color: #333;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  text-align: right;
+  text-align: center;
 }
 
 .form-control:focus {
@@ -154,7 +154,7 @@ textarea.form-control {
   }
   
   .container-custom {
-    padding: 0 1.5rem;
+    padding: 6rem 0rem 0rem 1rem;
   }
   
   .card-body {
@@ -171,7 +171,7 @@ textarea.form-control {
   
   .btn-primary,
   .btn-secondary {
-    padding: 0.9rem 2rem;
+    padding: 0.9rem 1rem;
   }
 }
 
@@ -182,7 +182,7 @@ textarea.form-control {
   }
   
   .container-custom {
-    padding: 0 1rem;
+    padding: 4rem 0rem 0rem 1rem;
   }
   
   .d-flex {
@@ -352,11 +352,29 @@ textarea.form-control {
   
   .btn-primary,
   .btn-secondary {
-    padding: 1.2rem 3rem;
-    font-size: 1.1rem;
+    padding: 1rem;
+    font-size: 1rem;
   }
   
   .contact-image-section {
     padding: 3rem;
   }
+}
+.form-group.has-validation {
+  position: relative;
+}
+
+.form-group.has-validation .validation-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #dc3545;
+  font-size: 1rem;
+  pointer-events: none;
+}
+
+[dir="rtl"] .form-group.has-validation .validation-icon {
+  left: auto;
+  right: 0.75rem;
 }
