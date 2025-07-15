@@ -70,10 +70,6 @@
   object-fit: cover;
 }
 
-/* .testimonial {
-  /* margin-bottom: 3rem; 
-} */
-
 .testimonial h3 {
   font-size: 2rem;
   font-weight: 600;
@@ -83,7 +79,7 @@
 
 .location {
   font-size: 1.2rem;
-  color: #CEAB63;
+  color: #B7B7B7;
   margin-bottom: 1rem;
   font-weight: 500;
 }
@@ -104,18 +100,15 @@
 }
 
 .testimonial-text {
-  font-size: 1.1rem;
-  font-family: 'system-ui' !important;
   color: #666;
-  line-height: 1.6;
   margin: 0;
 }
 
 .main-heading h2 {
   font-size: 3.5rem;
-  font-weight: 700;
+  font-weight: 400;
   color: #333;
-  line-height: 1.2;
+  line-height: 0.6;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -483,19 +476,23 @@
   }
   
   .main-heading h2 {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 0.6;
   }
   
   .testimonial h3 {
-    font-size: 2.2rem;
+    font-size: 1.6rem;
+    font-weight: 400;
   }
   
   .location {
-    font-size: 1.3rem;
+    font-size: 1rem;
   }
   
   .testimonial-text {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
   }
   
   .app-download h3 {

@@ -4,7 +4,7 @@
       <h1 class="mt-5 mt-sm-0">احصل على استشارة قانونية <br>
         من <span class="primary-color">المحامي المختص</span>
       </h1>
-      <p class="mb-5">
+      <p class="mb-5 text-light-gray">
         مرحبًا بكم في "Needs Lawyer", حيث تعتبر احتياجاتك القانونية أولويتنا القصوى. فريقنا من المحامين ذوي
         الخبرة ملتزم بتقديم استشارات قانونية شاملة تجيب بشكل فوري على احتياجاتك القانونيّة.
       </p>
@@ -37,7 +37,7 @@
           <div class="lawyer-profiles">
             <div class="profile-image" *ngFor="let lawyer of lawyers; let i = index"
               [class.active]="i === currentSlide()"
-              [style.transform]="'translateY(' + (i - currentSlide()) * 20 + 'px) translateX(' + (i - currentSlide()) * 8 + 'px)'">
+              [style.transform]="'translateY(' + (i - currentSlide()) * 0 + 'px) translateX(' + (i - currentSlide()) * 15 + 'px)'">
               <img [src]="lawyer.image" [alt]="lawyer.name" />
             </div>
           </div>

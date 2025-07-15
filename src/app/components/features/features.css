@@ -71,10 +71,6 @@
   direction: rtl;
 }
 
-/* .features-list {
-  margin-bottom: 3rem;
-} */
-
 .feature-item {
   display: flex;
   align-items: center;

@@ -12,68 +12,68 @@ body h1,h2,h3, p, a, li, span, div, button {
   font-family:'Cairo';
 }
 
-.poppins-thin {
-  font-family: "Poppins", sans-serif;
+.cairo-thin {
+  font-family: "Cairo",;
   font-weight: 100;
   font-style: normal;
 }
 
-.poppins-extralight {
-  font-family: "Poppins", sans-serif;
+.cairo-extralight {
+  font-family: "Cairo";
   font-weight: 200;
   font-style: normal;
 }
 
-.poppins-light {
-  font-family: "Poppins", sans-serif;
+.cairo-light {
+  font-family: "Cairo";
   font-weight: 300;
   font-style: normal;
 }
 
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
+.cairo-regular {
+  font-family: "Cairo";
   font-weight: 400;
   font-style: normal;
 }
 
-.poppins-medium {
-  font-family: "Poppins", sans-serif;
+.cairo-medium {
+  font-family: "Cairo";
   font-weight: 500;
   font-style: normal;
 }
 
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
+.cairo-semibold {
+  font-family: "Cairo";
   font-weight: 600;
   font-style: normal;
 }
 
-.poppins-thin-italic {
-  font-family: "Poppins", sans-serif;
+.cairo-thin-italic {
+  font-family: "Cairo";
   font-weight: 100;
   font-style: italic;
 }
 
-.poppins-extralight-italic {
-  font-family: "Poppins", sans-serif;
+.cairo-extralight-italic {
+  font-family: "Cairo";
   font-weight: 200;
   font-style: italic;
 }
 
-.poppins-light-italic {
-  font-family: "Poppins", sans-serif;
+.cairo-light-italic {
+  font-family: "Cairo";
   font-weight: 300;
   font-style: italic;
 }
 
-.poppins-regular-italic {
-  font-family: "Poppins", sans-serif;
+.cairo-regular-italic {
+  font-family: "Cairo";
   font-weight: 400;
   font-style: italic;
 }
 
-.poppins-medium-italic {
-  font-family: "Poppins", sans-serif;
+.cairo-medium-italic {
+  font-family: "Cairo";
   font-weight: 500;
   font-style: italic;
 }

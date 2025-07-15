@@ -1,3 +1,7 @@
+p {
+  color: #B7B7B7 !important;
+}
+
 .services {
   padding: 2rem 0;
 }
@@ -196,15 +200,15 @@
   .services-content {
     gap: 3rem;
   }
-  
+
   .services-text h2 {
     font-size: 2.5rem;
   }
-  
+
   .services-images {
     height: 450px;
   }
-  
+
   .secondary-image {
     width: 220px;
     height: 165px;
@@ -222,7 +226,7 @@
     gap: 2rem;
     text-align: center;
   }
-  
+
   .services-text {
     text-align: center;
     order: 1;
@@ -231,7 +235,7 @@
   .services-text h2 {
     font-size: 2rem;
   }
-  
+
   .services-text p {
     font-size: 1rem;
   }
@@ -247,51 +251,51 @@
     right: -20px;
     top: 10px;
   }
-  
+
   /* Statistics Section Mobile */
   .d-flex.w-100 {
     flex-direction: column !important;
     gap: 2rem !important;
   }
-  
+
   .statistics-image {
     width: 100% !important;
     order: 1;
   }
-  
+
   .statistics-image img {
     height: 200px !important;
   }
-  
+
   .justice-badge {
     width: 100% !important;
     height: auto !important;
     order: 2;
   }
-  
+
   .justice-badge .card-body {
     padding: 2rem 1rem;
   }
-  
+
   .justice-icon svg {
     width: 80px;
     height: 80px;
   }
-  
+
   .statistics-flex {
     flex-direction: column !important;
     gap: 1rem !important;
     order: 3;
   }
-  
+
   .stat-card {
     height: 120px !important;
   }
-  
+
   .stat-number {
     font-size: 1.8rem;
   }
-  
+
   .stat-text {
     font-size: 0.9rem;
   }
@@ -301,7 +305,7 @@
   .services {
     padding: 1rem 0;
   }
-  
+
   .services-content {
     gap: 1.5rem;
   }
@@ -310,7 +314,7 @@
     font-size: 1.8rem;
     margin-bottom: 1rem;
   }
-  
+
   .services-text p {
     font-size: 0.95rem;
     margin-bottom: 1rem;
@@ -319,15 +323,15 @@
   .services-images {
     height: 280px;
   }
-  
+
   .availability-badge {
     padding-right: 0.5rem;
   }
-  
+
   .availability-badge .time {
     font-size: 1.5rem;
   }
-  
+
   .availability-badge p {
     font-size: 0.8rem;
   }
@@ -338,34 +342,34 @@
     right: -10px;
     top: 5px;
   }
-  
+
   /* Statistics Section Small Mobile */
   .statistics-image img {
     height: 180px !important;
   }
-  
+
   .justice-badge .card-body {
     padding: 1.5rem 1rem;
   }
-  
+
   .justice-icon svg {
     width: 60px;
     height: 60px;
   }
-  
+
   .secondary-button {
     padding: 0.4rem 1.5rem;
     font-size: 0.9rem;
   }
-  
+
   .stat-card {
     height: 100px !important;
   }
-  
+
   .stat-number {
     font-size: 1.5rem;
   }
-  
+
   .stat-text {
     font-size: 0.8rem;
   }
@@ -376,19 +380,19 @@
   .d-flex.w-100 {
     gap: 2rem !important;
   }
-  
+
   .statistics-image {
     width: 25% !important;
   }
-  
+
   .justice-badge {
     width: 25% !important;
   }
-  
+
   .statistics-flex {
     gap: 0.5rem !important;
   }
-  
+
   .stat-card {
     height: 250px !important;
   }

@@ -72,6 +72,10 @@
   margin: 0.25rem 0;
 }
 
+ul li a {
+  font-weight: 100 !important;
+}
+
 .nav-link {
   color: #fff !important;
   padding: 1rem 1.5rem;
@@ -104,12 +108,6 @@
 .nav-link:hover::before {
   left: 100%;
 }
-
-/* .nav-link.active {
-  background: rgba(208, 175, 101, 0.2);
-  color: #d0af65 !important;
-  border-right: 3px solid #d0af65;
-} */
 
 .email-link {
   margin-top: 1rem;
