@@ -235,3 +235,49 @@ ul li a {
     font-size: 0.95rem;
   }
 } 
+
+.language-toggle {
+  background: #CEAB63;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 1rem;
+}
+
+.language-toggle:hover {
+  background: #d0af65;
+  transform: translateY(-2px);
+}
+
+/* RTL Support */
+[dir="ltr"] .navbar-nav {
+  flex-direction: row;
+}
+
+[dir="rtl"] .navbar-nav {
+  flex-direction: row;
+}
+
+[dir="ltr"] .nav-link {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+[dir="rtl"] .nav-link {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Responsive language toggle */
+@media (max-width: 768px) {
+  .language-toggle {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    margin: 0 0.5rem;
+  }
+}
