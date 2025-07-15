@@ -9,29 +9,30 @@ import { Component, signal } from '@angular/core';
 export class Hero {
   isLoading = signal(false);
   currentSlide = signal(0);
-  
+  language: 'ar' | 'en' = 'en';
+
   lawyers = [
     {
-      name: 'أحمد محمد',
-      specialty: 'محامي قانون تجاري',
+      name: this.language === 'ar' ? 'أحمد محمد' : 'Ahmed Mohammed',
+      specialty: this.language === 'ar' ? 'محامي قانون تجاري' : 'Commercial Law Lawyer',
       image: 'khalid.png',
       rating: '4.9'
     },
     {
-      name: 'فاطمة علي',
-      specialty: 'محامية أحوال شخصية',
+      name: this.language === 'ar' ? 'فاطمة علي' : 'Fatima Ali',
+      specialty: this.language === 'ar' ? 'محامية أحوال شخصية' : 'Family Law Lawyer',
       image: 'ahmed.png',
       rating: '4.8'
     },
     {
-      name: 'محمد السالم',
-      specialty: 'محامي قانون جنائي',
+      name: this.language === 'ar' ? 'محمد السالم' : 'Mohammed Al-Salem',
+      specialty: this.language === 'ar' ? 'محامي قانون جنائي' : 'Criminal Law Lawyer',
       image: 'khalid.png',
       rating: '4.7'
     },
     {
-      name: 'سارة أحمد',
-      specialty: 'محامية قانون عقاري',
+      name: this.language === 'ar' ? 'سارة أحمد' : 'Sarah Ahmed',
+      specialty: this.language === 'ar' ? 'محامية قانون عقاري' : 'Real Estate Law Lawyer',
       image: 'khwalid.png',
       rating: '4.9'
     }
@@ -47,5 +48,35 @@ export class Hero {
     this.currentSlide.update(current => 
       current === 0 ? this.lawyers.length - 1 : current - 1
     );
+  }
+
+  toggleLanguage() {
+    this.language = this.language === 'ar' ? 'en' : 'ar';
+    this.lawyers = [
+      {
+        name: this.language === 'ar' ? 'أحمد محمد' : 'Ahmed Mohammed',
+        specialty: this.language === 'ar' ? 'محامي قانون تجاري' : 'Commercial Law Lawyer',
+        image: 'khalid.png',
+        rating: '4.9'
+      },
+      {
+        name: this.language === 'ar' ? 'فاطمة علي' : 'Fatima Ali',
+        specialty: this.language === 'ar' ? 'محامية أحوال شخصية' : 'Family Law Lawyer',
+        image: 'ahmed.png',
+        rating: '4.8'
+      },
+      {
+        name: this.language === 'ar' ? 'محمد السالم' : 'Mohammed Al-Salem',
+        specialty: this.language === 'ar' ? 'محامي قانون جنائي' : 'Criminal Law Lawyer',
+        image: 'khalid.png',
+        rating: '4.7'
+      },
+      {
+        name: this.language === 'ar' ? 'سارة أحمد' : 'Sarah Ahmed',
+        specialty: this.language === 'ar' ? 'محامية قانون عقاري' : 'Real Estate Law Lawyer',
+        image: 'khwalid.png',
+        rating: '4.9'
+      }
+    ];
   }
 }

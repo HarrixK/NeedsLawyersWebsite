@@ -1,52 +1,60 @@
-<section class="hero" dir="rtl">
+<section class="hero" [class.hero-ltr]="language === 'en'" [dir]="language === 'en' ? 'ltr' : 'rtl'">
   <div class="container mt-5">
-    <div>
-      <h1 class="mt-5 mt-sm-0">احصل على استشارة قانونية <br>
-        من <span class="primary-color">المحامي المختص</span>
-      </h1>
-      <p class="mb-5 text-light-gray">
-        مرحبًا بكم في "Needs Lawyer", حيث تعتبر احتياجاتك القانونية أولويتنا القصوى. فريقنا من المحامين ذوي
-        الخبرة ملتزم بتقديم استشارات قانونية شاملة تجيب بشكل فوري على احتياجاتك القانونيّة.
-      </p>
-      <div>
-        <button routerLink="/contact" class="cta-button ms-3 mb-3 mb-sm-0">المحامون</button>
-        <button routerLink="/services" class="secondary-button">حمل التطبيق الآن</button>
-      </div>
-    </div>
+    <h1 class="mt-5 mt-sm-0" *ngIf="language === 'ar'">
+      احصل على استشارة قانونية <br>
+      من <span class="primary-color">المحامي المختص</span>
+    </h1>
+    <h1 class="mt-5 mt-sm-0" *ngIf="language === 'en'">
+      Get Legal Consultation <br>
+      from <span class="primary-color">Expert Lawyers</span>
+    </h1>
+    <p class="mb-5 text-light-gray" *ngIf="language === 'ar'">
+      مرحبًا بكم في "Needs Lawyer"، حيث تعتبر احتياجاتك القانونية أولويتنا القصوى. فريقنا من المحامين ذوي
+      الخبرة ملتزم بتقديم استشارات قانونية شاملة تجيب بشكل فوري على احتياجاتك القانونيّة.
+    </p>
+    <p class="mb-5 text-light-gray" *ngIf="language === 'en'">
+      Welcome to "Needs Lawyer," where your legal needs are our top priority. Our team of experienced lawyers is committed to providing comprehensive legal consultations that promptly address your legal requirements.
+    </p>
+    <button routerLink="/contact" class="cta-button ms-3 mb-3 mb-sm-0" *ngIf="language === 'ar'">المحامون</button>
+    <button routerLink="/contact" class="cta-button me-3 mb-3 mb-sm-0" *ngIf="language === 'en'">Our Lawyers</button>
+    <button routerLink="/services" class="secondary-button" *ngIf="language === 'ar'">حمل التطبيق الآن</button>
+    <button routerLink="/services" class="secondary-button" *ngIf="language === 'en'">Download the App Now</button>
+    <div></div>
 
     <!-- Carousel Section -->
-    <div class="carousel-container mt-5" dir="ltr">
+    <div class="carousel-container mt-5" [dir]="language === 'en' ? 'ltr' : 'rtl'">
       <div class="carousel-wrapper">
         <div class="carousel-header">
-          <h2>المحامون<br>المتميزون</h2>
           <div class="carousel-controls">
-            <button class="carousel-btn prev" (click)="previousSlide()">
+            <button class="carousel-btn prev" (click)="nextSlide()">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M15 18l-6-6 6-6" />
+                <path [attr.d]="language === 'en' ? 'M15 18l-6-6 6-6' : 'M9 18l6-6-6-6'" />
               </svg>
             </button>
-            <button class="carousel-btn next" (click)="nextSlide()">
+            <button class="carousel-btn next" (click)="previousSlide()">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M9 18l6-6-6-6" />
+                <path [attr.d]="language === 'en' ? 'M9 18l6-6-6-6' : 'M15 18l-6-6 6-6'" />
               </svg>
             </button>
           </div>
+          <h2 *ngIf="language === 'ar'">المحامون<br>المتميزون</h2>
+          <h2 *ngIf="language === 'en'">Outstanding<br>Lawyers</h2>
         </div>
 
         <div class="carousel-content">
-          <div class="lawyer-profiles">
-            <div class="profile-image" *ngFor="let lawyer of lawyers; let i = index"
-              [class.active]="i === currentSlide()"
-              [style.transform]="'translateY(' + (i - currentSlide()) * 0 + 'px) translateX(' + (i - currentSlide()) * 15 + 'px)'">
-              <img [src]="lawyer.image" [alt]="lawyer.name" />
-            </div>
-          </div>
-
           <div class="lawyer-info">
-            <p class="intro-text">تعرف<br>على فريقنا</p>
+            <p class="intro-text" *ngIf="language === 'ar'">تعرف<br>على فريقنا</p>
+            <p class="intro-text" *ngIf="language === 'en'">Meet<br>Our Team</p>
             <div class="lawyer-details">
               <h3>{{ lawyers[currentSlide()].name }}</h3>
               <p>{{ lawyers[currentSlide()].specialty }}</p>
+            </div>
+          </div>
+          <div class="lawyer-profiles">
+            <div class="profile-image" *ngFor="let lawyer of lawyers; let i = index"
+              [class.active]="i === currentSlide()"
+              [style.transform]="language === 'en' ? 'translateY(' + (i - currentSlide()) * 0 + 'px) translateX(' + (currentSlide() - i) * 15 + 'px)' : 'translateY(' + (i - currentSlide()) * 0 + 'px) translateX(' + (i - currentSlide()) * 15 + 'px)'">
+              <img [src]="lawyer.image" [alt]="lawyer.name" />
             </div>
           </div>
         </div>
@@ -54,7 +62,7 @@
         <div class="carousel-navigation">
           <button class="nav-arrow" (click)="nextSlide()">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14m-7-7l7 7-7 7" />
+              <path [attr.d]="language === 'en' ? 'M5 12h14m-7-7l7 7-7 7' : 'M19 12H5m7-7l-7 7 7 7'" />
             </svg>
           </button>
         </div>
