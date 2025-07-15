@@ -78,7 +78,7 @@
 }
 
 .footer-links a:hover {
-  color: #d4a017;
+  color: #CEAB63;
 }
 
 .footer-links a::before {
@@ -115,7 +115,7 @@
 }
 
 .social-link:hover {
-  background-color: #d4a017;
+  background-color: #CEAB63;
   border-color: #d4a017;
   color: #fff;
   transform: translateY(-3px);
