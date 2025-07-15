@@ -165,7 +165,7 @@
 /* Tablet Responsive */
 @media (max-width: 1024px) {
   .reviews {
-    padding: 3rem 0;
+    padding: 1rem 0;
   }
   
   .reviews-header {
@@ -210,7 +210,7 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .reviews {
-    padding: 2rem 0;
+    padding: 1rem 0;
   }
   
   .container {
@@ -360,7 +360,7 @@
 /* Large Desktop */
 @media (min-width: 1200px) {
   .reviews {
-    padding: 5rem 0;
+    padding: 1rem 0;
   }
   
   .reviews-header h2 {

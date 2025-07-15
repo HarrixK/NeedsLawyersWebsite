@@ -19,10 +19,10 @@ section {
 }
 
 /* Common padding for sections */
-section.py-16 {
+/* section.py-16 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
+} */
 
 /* Animation utilities */
 .fade-in {

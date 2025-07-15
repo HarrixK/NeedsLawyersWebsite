@@ -71,9 +71,9 @@
   direction: rtl;
 }
 
-.features-list {
+/* .features-list {
   margin-bottom: 3rem;
-}
+} */
 
 .feature-item {
   display: flex;
@@ -146,7 +146,7 @@
 /* Tablet Responsive */
 @media (max-width: 1024px) {
   .features {
-    padding: 3rem 0;
+    padding: 1rem 0;
   }
   
   .features-header {
@@ -173,7 +173,7 @@
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .features {
-    padding: 2rem 0;
+    padding: 1rem 0;
   }
   
   .container {
@@ -293,7 +293,7 @@
 /* Large Desktop */
 @media (min-width: 1200px) {
   .features {
-    padding: 5rem 0;
+    padding: 1rem 0;
   }
   
   .features-header h2 {

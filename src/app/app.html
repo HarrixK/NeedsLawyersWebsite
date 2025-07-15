@@ -1,7 +1,6 @@
-<!-- app.component.html -->
 <div class="app-container">
   <!-- Header/Navigation -->
-  <app-header class="fixed"></app-header>
+  <app-header class="fixed" (navigateToSection)="scrollToSection($event)"></app-header>
   
   <!-- Hero Section -->
   <section id="hero" class="min-h-screen">
@@ -29,7 +28,7 @@
     </div>
   </section>
 
-    <section id="reviews" class="py-16">
+  <section id="cta" class="py-16">
     <div class="container">
       <app-cta></app-cta>
     </div>
@@ -43,11 +42,3 @@
   <!-- Footer -->
   <app-footer></app-footer>
 </div>
-
-<!-- Optional: Scroll to top button -->
-<!-- <button 
-  class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300 z-50"
-  (click)="scrollToSection('hero')"
-  *ngIf="showScrollTop">
-  ↑
-</button> -->

@@ -38,8 +38,17 @@ title = 'landing-page';
   }
   
   // Method to handle smooth scrolling between sections
-  scrollToSection(sectionId: string): void {
-    this.viewportScroller.scrollToAnchor(sectionId);
+scrollToSection(sectionId: any): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerHeight = 100; // Adjust based on your header height
+      const targetPosition = element.offsetTop - headerHeight;
+      
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
+      });
+    }
   }
   
   // Alternative scroll method using native behavior

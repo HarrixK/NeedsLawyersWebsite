@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, EventEmitter, Output, signal } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +8,8 @@ import { Component, signal } from '@angular/core';
 })
 export class Header {
    isMenuOpen:boolean = false;
-
+  @Output() navigateToSection = new EventEmitter<string>();
+ 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
     // Add/remove class to body to prevent scrolling when menu is open
@@ -17,6 +18,14 @@ export class Header {
     } else {
       document.body.classList.remove('menu-open');
     }
+  }
+
+  
+  // Method to handle navigation clicks
+  onNavClick(sectionId: string, event: Event) {
+    event.preventDefault();
+    this.navigateToSection.emit(sectionId);
+    this.closeMenu();
   }
 
   closeMenu() {

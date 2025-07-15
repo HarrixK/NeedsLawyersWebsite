@@ -284,7 +284,8 @@ p {
   .hero {
     height: auto;
     min-height: 100vh;
-    background: linear-gradient(135deg, #d4a017 0%, #000000 100%);
+    background-image: url('../../../../public/mob-banner.png');
+    /* background: linear-gradient(135deg, #d4a017 0%, #000000 100%); */
   }
   
   .hero-main {
