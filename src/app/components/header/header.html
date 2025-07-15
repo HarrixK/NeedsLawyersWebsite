@@ -1,15 +1,9 @@
 <header id="header" class="header sticky-top" [attr.dir]="currentLanguage === 'ar' ? 'rtl' : 'ltr'">
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="#" [style.order]="currentLanguage === 'ar' ? '1' : '0'">
+      <a class="navbar-brand" href="#">
         <img src="logo.png" alt="Needs Lawyers Logo" class="logo-img">
-      </a>
-      
-      <!-- Language Toggle Button -->
-      <button class="language-toggle" (click)="toggleLanguage()" 
-              [style.order]="currentLanguage === 'ar' ? '0' : '2'">
-        {{ currentLanguage === 'ar' ? 'EN' : 'عربي' }}
-      </button>
+      </a> 
       
       <button class="navbar-toggler" type="button" (click)="toggleMenu()" 
               [attr.aria-expanded]="isMenuOpen" [style.order]="currentLanguage === 'ar' ? '2' : '1'">
@@ -63,6 +57,11 @@
           </svg>
         </a>
       </div>
+
+      <!-- Language Toggle Button -->
+      <button class="language-toggle" (click)="toggleLanguage()">
+        {{ currentLanguage === 'ar' ? 'EN' : 'عربي' }}
+      </button>
     </nav>
   </div>
 </header>

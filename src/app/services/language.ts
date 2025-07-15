@@ -18,7 +18,7 @@ export class Language {
     this.currentLanguageSubject.next(language);
     localStorage.setItem('language', language);
     document.documentElement.setAttribute('lang', language);
-    document.documentElement.setAttribute('dir', language === 'ar' ? 'rtl' : 'ltr');
+    document.documentElement.setAttribute('dir', language === 'ar' ? 'ltr' : 'rtl');
   }
 
   getCurrentLanguage(): string {

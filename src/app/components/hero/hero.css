@@ -12,7 +12,7 @@
 }
 
 .hero-ltr {
-  transform: scaleX(1);
+  background-image: url('../../../../public/banner-ltr.webp');
 }
 
 .hero-overlay {
