@@ -412,3 +412,7 @@ textarea.form-control {
   left: auto;
   right: 0.75rem;
 }
+
+.card {
+  background-color: transparent;
+}

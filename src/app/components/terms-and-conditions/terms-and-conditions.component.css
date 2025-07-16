@@ -2,7 +2,6 @@
 /* Add these styles to your existing CSS */
 
 .last-updated-header {
-  text-align: right;
   margin-top: 1rem;
   padding: 1rem;
 }
@@ -37,7 +36,6 @@
 
 .hero-text {
   flex: 1;
-  text-align: right;
 }
 
 .hero-title {
@@ -150,6 +148,10 @@
   align-items: center;
 }
 
+.privacy-hero-ltr {
+  background-image: url('../../../../public/terms-ltr.webp');
+}
+
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -164,4 +166,8 @@
   position: relative;
   z-index: 2;
   width: 100%;
+}
+
+.bottom-banner {
+  max-width: 100%;
 }

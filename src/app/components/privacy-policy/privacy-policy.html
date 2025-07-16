@@ -1,16 +1,19 @@
-<div class="privacy-policy-page" dir="rtl">
+<div class="privacy-policy-page" [dir]="language === 'en' ? 'ltr' : 'rtl'">
   <!-- Hero Section -->
-  <section class="privacy-hero">
+  <section class="privacy-hero" [class.privacy-hero-ltr]="language === 'en'">
     <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content">
         <div class="hero-main">
           <div class="hero-text">
-            <h1 class="hero-title">سياسة <span class="highlight">الخصوصية</span></h1>
+            <h1 class="hero-title" *ngIf="language === 'ar'">سياسة <span class="highlight">الخصوصية</span></h1>
+            <h1 class="hero-title" *ngIf="language === 'en'">Privacy <span class="highlight">Policy</span></h1>
             <div class="breadcrumb">
-              <span>الرئيسية</span>
+              <span *ngIf="language === 'ar'">الرئيسية</span>
+              <span *ngIf="language === 'en'">Home</span>
               <span class="separator">></span>
-              <span class="highlight">سياسة الخصوصية</span>
+              <span class="highlight" *ngIf="language === 'ar'">سياسة الخصوصية</span>
+              <span class="highlight" *ngIf="language === 'en'">Privacy Policy</span>
             </div>
           </div>
         </div>
@@ -23,14 +26,18 @@
     <div class="container">
       <!-- Last Updated -->
       <div class="last-updated-header">
-        <p>آخر تحديث: 15/07/2025</p>
+        <p *ngIf="language === 'ar'">آخر تحديث: 15/07/2025</p>
+        <p *ngIf="language === 'en'">Last Updated: 07/15/2025</p>
       </div>
 
       <!-- Introduction -->
       <div class="privacy-intro">
-        <p>
+        <p *ngIf="language === 'ar'">
           نحن في أتاح فريق Needs Lawyers ملتزم بحماية خصوصيتك وضمان سرية بياناتك الشخصية. توضح هذه السياسة كيفية جمعنا
           واستخدامنا وحمايتنا لمعلوماتك عند استخدامك للتطبيق أو الموقع.
+        </p>
+        <p *ngIf="language === 'en'">
+          We at the Needs Lawyers team are committed to protecting your privacy and ensuring the confidentiality of your personal information. This policy explains how we collect, use, and protect your information when you use the application or website.
         </p>
       </div>
 
@@ -38,15 +45,23 @@
         <!-- Section 1: Information We Collect -->
         <div class="privacy-card">
           <div class="card-header">
-            <h2 class="strong">1. المعلومات التي نجمعها</h2>
+            <h2 class="strong" *ngIf="language === 'ar'">1. المعلومات التي نجمعها</h2>
+            <h2 class="strong" *ngIf="language === 'en'">1. Information We Collect</h2>
           </div>
           <div class="card-content">
-            <p>عند استخدامك للتطبيق أو الموقع، قد نقوم بجمع البيانات التالية:</p>
-            <ul>
+            <p *ngIf="language === 'ar'">عند استخدامك للتطبيق أو الموقع، قد نقوم بجمع البيانات التالية:</p>
+            <p *ngIf="language === 'en'">When you use the application or website, we may collect the following data:</p>
+            <ul *ngIf="language === 'ar'">
               <li>معلومات الحساب: الاسم، البريد الإلكتروني، رقم الهاتف، وأي بيانات تعريفية أخرى.</li>
               <li>البيانات المالية: تفاصيل الدفع عبر البطاقات البنكية (معالجتها تتم عبر مزودي خدمات آمنة ولا نقوم بتخزين بيانات البطاقات).</li>
               <li>محتوى الاستشارات: الأسئلة القانونية والعروض المقدمة من المحامين والردود.</li>
               <li>البيانات التقنية: عنوان IP، نوع الجهاز، نظام التشغيل، وسجلات الاستخدام.</li>
+            </ul>
+            <ul *ngIf="language === 'en'">
+              <li>Account Information: Name, email address, phone number, and any other identifying information.</li>
+              <li>Financial Data: Payment details via bank cards (processed through secure service providers; we do not store card information).</li>
+              <li>Consultation Content: Legal questions, offers provided by lawyers, and responses.</li>
+              <li>Technical Data: IP address, device type, operating system, and usage logs.</li>
             </ul>
           </div>
         </div>
@@ -54,16 +69,25 @@
         <!-- Section 2: How We Use Information -->
         <div class="privacy-card">
           <div class="card-header">
-            <h2 class="strong">2. كيفية استخدام المعلومات</h2>
+            <h2 class="strong" *ngIf="language === 'ar'">2. كيفية استخدام المعلومات</h2>
+            <h2 class="strong" *ngIf="language === 'en'">2. How We Use Information</h2>
           </div>
           <div class="card-content">
-            <p>نستخدم المعلومات المجمعة للأغراض التالية:</p>
-            <ul>
+            <p *ngIf="language === 'ar'">نستخدم المعلومات المجمعة للأغراض التالية:</p>
+            <p *ngIf="language === 'en'">We use the collected information for the following purposes:</p>
+            <ul *ngIf="language === 'ar'">
               <li>تقديم الخدمات القانونية وربطك بالمحامين المناسبين.</li>
               <li>معالجة المدفوعات وإدارة الحسابات.</li>
               <li>تحسين جودة الخدمة وتطوير التطبيق.</li>
               <li>التواصل معك بشأن الاستشارات والتحديثات.</li>
               <li>ضمان الأمان ومنع الاحتيال.</li>
+            </ul>
+            <ul *ngIf="language === 'en'">
+              <li>Providing legal services and connecting you with suitable lawyers.</li>
+              <li>Processing payments and managing accounts.</li>
+              <li>Improving service quality and developing the application.</li>
+              <li>Communicating with you regarding consultations and updates.</li>
+              <li>Ensuring security and preventing fraud.</li>
             </ul>
           </div>
         </div>
@@ -71,15 +95,23 @@
         <!-- Section 3: Information Sharing -->
         <div class="privacy-card">
           <div class="card-header">
-            <h2 class="strong">3. مشاركة المعلومات</h2>
+            <h2 class="strong" *ngIf="language === 'ar'">3. مشاركة المعلومات</h2>
+            <h2 class="strong" *ngIf="language === 'en'">3. Information Sharing</h2>
           </div>
           <div class="card-content">
-            <p>نحن لا نبيع أو نؤجر معلوماتك الشخصية لأطراف ثالثة. قد نشارك معلوماتك في الحالات التالية:</p>
-            <ul>
+            <p *ngIf="language === 'ar'">نحن لا نبيع أو نؤجر معلوماتك الشخصية لأطراف ثالثة. قد نشارك معلوماتك في الحالات التالية:</p>
+            <p *ngIf="language === 'en'">We do not sell or rent your personal information to third parties. We may share your information in the following cases:</p>
+            <ul *ngIf="language === 'ar'">
               <li>مع المحامين المسجلين في التطبيق لتقديم الخدمات القانونية.</li>
               <li>مع مقدمي الخدمات الذين يساعدوننا في تشغيل التطبيق.</li>
               <li>عند الطلب من الجهات القانونية المختصة.</li>
               <li>لحماية حقوقنا أو حقوق المستخدمين الآخرين.</li>
+            </ul>
+            <ul *ngIf="language === 'en'">
+              <li>With registered lawyers on the application to provide legal services.</li>
+              <li>With service providers who assist us in operating the application.</li>
+              <li>When requested by competent legal authorities.</li>
+              <li>To protect our rights or the rights of other users.</li>
             </ul>
           </div>
         </div>
@@ -87,15 +119,23 @@
         <!-- Section 4: Data Protection -->
         <div class="privacy-card">
           <div class="card-header">
-            <h2 class="strong">4. حماية البيانات</h2>
+            <h2 class="strong" *ngIf="language === 'ar'">4. حماية البيانات</h2>
+            <h2 class="strong" *ngIf="language === 'en'">4. Data Protection</h2>
           </div>
           <div class="card-content">
-            <p>نستخدم التدابير الأمنية المناسبة لحماية معلوماتك من:</p>
-            <ul>
+            <p *ngIf="language === 'ar'">نستخدم التدابير الأمنية المناسبة لحماية معلوماتك من:</p>
+            <p *ngIf="language === 'en'">We use appropriate security measures to protect your information from:</p>
+            <ul *ngIf="language === 'ar'">
               <li>الوصول غير المصرح به.</li>
               <li>التعديل أو التلاعب بالبيانات.</li>
               <li>الإفصاح غير المشروع.</li>
               <li>التدمير أو الفقدان.</li>
+            </ul>
+            <ul *ngIf="language === 'en'">
+              <li>Unauthorized access.</li>
+              <li>Modification or tampering with data.</li>
+              <li>Unlawful disclosure.</li>
+              <li>Destruction or loss.</li>
             </ul>
           </div>
         </div>
@@ -103,16 +143,25 @@
         <!-- Section 5: User Rights -->
         <div class="privacy-card">
           <div class="card-header">
-            <h2 class="strong">5. حقوقك</h2>
+            <h2 class="strong" *ngIf="language === 'ar'">5. حقوقك</h2>
+            <h2 class="strong" *ngIf="language === 'en'">5. Your Rights</h2>
           </div>
           <div class="card-content">
-            <p>لديك الحق في:</p>
-            <ul>
+            <p *ngIf="language === 'ar'">لديك الحق في:</p>
+            <p *ngIf="language === 'en'">You have the right to:</p>
+            <ul *ngIf="language === 'ar'">
               <li>الوصول إلى معلوماتك الشخصية.</li>
               <li>تصحيح أو تحديث معلوماتك.</li>
               <li>طلب حذف معلوماتك.</li>
               <li>إلغاء الاشتراك في الرسائل التسويقية.</li>
               <li>تقييد معالجة معلوماتك.</li>
+            </ul>
+            <ul *ngIf="language === 'en'">
+              <li>Access your personal information.</li>
+              <li>Correct or update your information.</li>
+              <li>Request deletion of your information.</li>
+              <li>Opt out of marketing communications.</li>
+              <li>Restrict the processing of your information.</li>
             </ul>
           </div>
         </div>
@@ -120,36 +169,42 @@
         <!-- Section 6: Cookies -->
         <div class="privacy-card">
           <div class="card-header">
-            <h2 class="strong">6. ملفات تعريف الارتباط</h2>
+            <h2 class="strong" *ngIf="language === 'ar'">6. ملفات تعريف الارتباط</h2>
+            <h2 class="strong" *ngIf="language === 'en'">6. Cookies</h2>
           </div>
           <div class="card-content">
-            <p>نستخدم الكوكيز وتقنيات التتبع المماثلة لتحسين تجربتك في استخدام التطبيق وتحليل الاستخدام.</p>
+            <p *ngIf="language === 'ar'">نستخدم الكوكيز وتقنيات التتبع المماثلة لتحسين تجربتك في استخدام التطبيق وتحليل الاستخدام.</p>
+            <p *ngIf="language === 'en'">We use cookies and similar tracking technologies to enhance your experience in using the application and analyze usage.</p>
           </div>
         </div>
 
         <!-- Section 7: Policy Updates -->
         <div class="privacy-card">
           <div class="card-header">
-            <h2 class="strong">7. تحديثات السياسة</h2>
+            <h2 class="strong" *ngIf="language === 'ar'">7. تحديثات السياسة</h2>
+            <h2 class="strong" *ngIf="language === 'en'">7. Policy Updates</h2>
           </div>
           <div class="card-content">
-            <p>قد نقوم بتحديث هذه السياسة من وقت لآخر. سنقوم بإشعارك بأي تغييرات مهمة عبر البريد الإلكتروني أو إشعار في التطبيق.</p>
+            <p *ngIf="language === 'ar'">قد نقوم بتحديث هذه السياسة من وقت لآخر. سنقوم بإشعارك بأي تغييرات مهمة عبر البريد الإلكتروني أو إشعار في التطبيق.</p>
+            <p *ngIf="language === 'en'">We may update this policy from time to time. We will notify you of any significant changes via email or a notification in the application.</p>
           </div>
         </div>
 
         <!-- Section 8: Contact Us -->
         <div class="privacy-card contact-card">
           <div class="card-header">
-            <h2 class="strong">8. التواصل معنا</h2>
+            <h2 class="strong" *ngIf="language === 'ar'">8. التواصل معنا</h2>
+            <h2 class="strong" *ngIf="language === 'en'">8. Contact Us</h2>
           </div>
           <div class="card-content">
-            <p>إذا كان لديك أي أسئلة حول سياسة الخصوصية هذه، يمكنك التواصل معنا عبر:</p>
+            <p *ngIf="language === 'ar'">إذا كان لديك أي أسئلة حول سياسة الخصوصية هذه، يمكنك التواصل معنا عبر:</p>
+            <p *ngIf="language === 'en'">If you have any questions about this privacy policy, you can contact us via:</p>
           </div>
         </div>
       </div>
     </div>
   </section>
   <section class="d-flex justify-content-center align-items-center flex-column mb-5">
-    <img src="privacy-policy-2.png" alt="">
+    <img src="privacy-policy-2.png" alt="" class="bottom-banner">
   </section>
 </div>

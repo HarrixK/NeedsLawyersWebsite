@@ -1,16 +1,19 @@
-<div class="privacy-policy-page" dir="rtl">
+<div class="privacy-policy-page" [dir]="language === 'en' ? 'ltr' : 'rtl'">
   <!-- Hero Section -->
-  <section class="privacy-hero">
+  <section class="privacy-hero" [class.privacy-hero-ltr]="language === 'en'">
     <div class="hero-overlay"></div>
     <div class="container">
       <div class="hero-content">
         <div class="hero-main">
           <div class="hero-text">
-            <h1 class="hero-title">شروط <span class="highlight">الإستخدام</span></h1>
+            <h1 class="hero-title" *ngIf="language === 'ar'">شروط <span class="highlight">الإستخدام</span></h1>
+            <h1 class="hero-title" *ngIf="language === 'en'">Terms <span class="highlight">of Use</span></h1>
             <div class="breadcrumb">
-              <span>الرئيسية</span>
+              <span *ngIf="language === 'ar'">الرئيسية</span>
+              <span *ngIf="language === 'en'">Home</span>
               <span>></span>
-              <span class="separator">شروط الإستخدام</span>
+              <span class="separator" *ngIf="language === 'ar'">شروط الإستخدام</span>
+              <span class="separator" *ngIf="language === 'en'">Terms of Use</span>
             </div>
           </div>
         </div>
@@ -23,13 +26,17 @@
     <div class="container">
       <!-- Last Updated -->
       <div class="last-updated-header">
-        <p>آخر تحديث: 15/07/2025</p>
+        <p *ngIf="language === 'ar'">آخر تحديث: 15/07/2025</p>
+        <p *ngIf="language === 'en'">Last Updated: 07/15/2025</p>
       </div>
 
       <!-- Introduction -->
       <div class="privacy-intro">
-        <p>
+        <p *ngIf="language === 'ar'">
           باستخدامك لتطبيق وموقع أحتاج محام Needs Lawyers فإنك توافق على الالتزام بالشروط التالية:
+        </p>
+        <p *ngIf="language === 'en'">
+          By using the Needs Lawyers application and website, you agree to abide by the following terms:
         </p>
       </div>
 
@@ -37,14 +44,21 @@
         <!-- Section 1 -->
         <div class="privacy-card">
           <div class="card-header">
-            <h2 class="strong">1. التعريفات</h2>
+            <h2 class="strong" *ngIf="language === 'ar'">1. التعريفات</h2>
+            <h2 class="strong" *ngIf="language === 'en'">1. Definitions</h2>
           </div>
           <div class="card-content">
-            <ul>
+            <ul *ngIf="language === 'ar'">
               <li>المستخدم: أي شخص يستخدم التطبيق سواء كان طالب استشارة أو محامياً.</li>
               <li>طالب الاستشارة: الشخص الذي ينشر سؤالاً قانونياً داخل التطبيق.</li>
               <li>المحامي: المحترف القانوني المرخص الذي يقدم عروض الاستشارات والردود القانونية.</li>
               <li>الخدمة: المنصة الإلكترونية التي تتيح التواصل بين المحامين وطالبي الاستشارات.</li>
+            </ul>
+            <ul *ngIf="language === 'en'">
+              <li>User: Any person who uses the application, whether a consultation seeker or a lawyer.</li>
+              <li>Consultation Seeker: The person who posts a legal question within the application.</li>
+              <li>Lawyer: The licensed legal professional who provides consultation offers and legal responses.</li>
+              <li>Service: The electronic platform that facilitates communication between lawyers and consultation seekers.</li>
             </ul>
           </div>
         </div>
@@ -52,12 +66,17 @@
         <!-- Section 2 -->
         <div class="privacy-card">
           <div class="card-header">
-            <h2 class="strong">2. طبيعة الخدمة</h2>
+            <h2 class="strong" *ngIf="language === 'ar'">2. طبيعة الخدمة</h2>
+            <h2 class="strong" *ngIf="language === 'en'">2. Nature of the Service</h2>
           </div>
           <div class="card-content">
-            <ul>
+            <ul *ngIf="language === 'ar'">
               <li>التطبيق وسيط يربط بين طالبي الاستشارات والمحامين ولا يقدم أي استشارات قانونية مباشرة.</li>
               <li>لا نتحمل مسؤولية دقة أو قانونية المعلومات المقدمة من المحامين.</li>
+            </ul>
+            <ul *ngIf="language === 'en'">
+              <li>The application acts as an intermediary connecting consultation seekers with lawyers and does not provide direct legal consultations.</li>
+              <li>We are not responsible for the accuracy or legality of the information provided by lawyers.</li>
             </ul>
           </div>
         </div>
@@ -65,13 +84,19 @@
         <!-- Section 3 -->
         <div class="privacy-card">
           <div class="card-header">
-            <h2 class="strong">3.  إنشاء الحساب واستخدامه</h2>
+            <h2 class="strong" *ngIf="language === 'ar'">3. إنشاء الحساب واستخدامه</h2>
+            <h2 class="strong" *ngIf="language === 'en'">3. Account Creation and Use</h2>
           </div>
           <div class="card-content">
-            <ul>
-                <li>يجب تقديم معلومات صحيحة ودقيقة عند التسجيل.</li>
-                <li>يتحمل المستخدم مسؤولية سرية بيانات الدخول.</li>
-                <li>يُمنع استخدام الخدمة لأي أغراض غير قانونية أو احتيالية.</li>
+            <ul *ngIf="language === 'ar'">
+              <li>يجب تقديم معلومات صحيحة ودقيقة عند التسجيل.</li>
+              <li>يتحمل المستخدم مسؤولية سرية بيانات الدخول.</li>
+              <li>يُمنع استخدام الخدمة لأي أغراض غير قانونية أو احتيالية.</li>
+            </ul>
+            <ul *ngIf="language === 'en'">
+              <li>Accurate and truthful information must be provided during registration.</li>
+              <li>The user is responsible for maintaining the confidentiality of login credentials.</li>
+              <li>Use of the service for any illegal or fraudulent purposes is prohibited.</li>
             </ul>
           </div>
         </div>
@@ -79,15 +104,23 @@
         <!-- Section 4 -->
         <div class="privacy-card">
           <div class="card-header">
-            <h2 class="strong">4. آلية تقديم الاستشارات</h2>
+            <h2 class="strong" *ngIf="language === 'ar'">4. آلية تقديم الاستشارات</h2>
+            <h2 class="strong" *ngIf="language === 'en'">4. Consultation Process</h2>
           </div>
           <div class="card-content">
-            <ul>
+            <ul *ngIf="language === 'ar'">
               <li>يقوم طالب الاستشارة بنشر سؤاله القانوني.</li>
               <li>يقدم المحامون عروضهم مع تحديد السعر.</li>
               <li>يختار طالب الاستشارة العرض المناسب ويدفع المبلغ عبر التطبيق، حيث يُحجز في محفظة مؤقتة.</li>
               <li>عند تقديم المحامي للإجابة القانونية، يتم تحويل المبلغ إلى محفظته بعد خصم عمولة التطبيق.</li>
               <li>إذا لم يرد المحامي في المهلة المحددة، تُعاد الاستشارة لحالتها السابقة ليتاح لبقية المحامين تقديم عروض جديدة.</li>
+            </ul>
+            <ul *ngIf="language === 'en'">
+              <li>The consultation seeker posts their legal question.</li>
+              <li>Lawyers submit their offers with specified prices.</li>
+              <li>The consultation seeker selects a suitable offer and pays the amount through the application, where it is held in a temporary wallet.</li>
+              <li>Upon the lawyer providing the legal response, the amount is transferred to their wallet after deducting the application's commission.</li>
+              <li>If the lawyer does not respond within the specified timeframe, the consultation is returned to its previous state, allowing other lawyers to submit new offers.</li>
             </ul>
           </div>
         </div>
@@ -95,13 +128,19 @@
         <!-- Section 5 -->
         <div class="privacy-card">
           <div class="card-header">
-            <h2 class="strong">5. الدفع والسحب</h2>
+            <h2 class="strong" *ngIf="language === 'ar'">5. الدفع والسحب</h2>
+            <h2 class="strong" *ngIf="language === 'en'">5. Payment and Withdrawal</h2>
           </div>
           <div class="card-content">
-            <ul>
+            <ul *ngIf="language === 'ar'">
               <li>جميع المدفوعات تُعالج عبر مزودي خدمات دفع آمنة.</li>
               <li>يمكن للمحامي سحب رصيده مرة واحدة شهرياً وفق سياسات التطبيق.</li>
               <li>تحتفظ المنصة بنسبة مئوية كعمولة عن كل استشارة مكتملة.</li>
+            </ul>
+            <ul *ngIf="language === 'en'">
+              <li>All payments are processed through secure payment service providers.</li>
+              <li>Lawyers can withdraw their balance once a month in accordance with the application's policies.</li>
+              <li>The platform retains a percentage as a commission for each completed consultation.</li>
             </ul>
           </div>
         </div>
@@ -109,12 +148,17 @@
         <!-- Section 6 -->
         <div class="privacy-card">
           <div class="card-header">
-            <h2 class="strong">6. إخلاء المسؤولية</h2>
+            <h2 class="strong" *ngIf="language === 'ar'">6. إخلاء المسؤولية</h2>
+            <h2 class="strong" *ngIf="language === 'en'">6. Disclaimer</h2>
           </div>
           <div class="card-content">
-            <ul>
-                <li>أحتاج محام Needs Lawyers لا يضمن جودة أو دقة الاستشارات القانونية، والمسؤولية كاملة تقع على المحامي مقدم الخدمة.</li>
-                <li>لا نتحمل أي أضرار مباشرة أو غير مباشرة تنتج عن استخدام الخدمة.</li>
+            <ul *ngIf="language === 'ar'">
+              <li>أحتاج محام Needs Lawyers لا يضمن جودة أو دقة الاستشارات القانونية، والمسؤولية كاملة تقع على المحامي مقدم الخدمة.</li>
+              <li>لا نتحمل أي أضرار مباشرة أو غير مباشرة تنتج عن استخدام الخدمة.</li>
+            </ul>
+            <ul *ngIf="language === 'en'">
+              <li>Needs Lawyers does not guarantee the quality or accuracy of legal consultations, and full responsibility lies with the lawyer providing the service.</li>
+              <li>We are not liable for any direct or indirect damages resulting from the use of the service.</li>
             </ul>
           </div>
         </div>
@@ -122,36 +166,42 @@
         <!-- Section 7 -->
         <div class="privacy-card">
           <div class="card-header">
-            <h2 class="strong">7. التعديلات على الخدمة والشروط</h2>
+            <h2 class="strong" *ngIf="language === 'ar'">7. التعديلات على الخدمة والشروط</h2>
+            <h2 class="strong" *ngIf="language === 'en'">7. Modifications to the Service and Terms</h2>
           </div>
           <div class="card-content">
-            <p>نحتفظ بحق تعديل أو تحديث الشروط أو الخدمات في أي وقت، وسيتم إشعار المستخدمين بالتغييرات الجوهرية.</p>
+            <p *ngIf="language === 'ar'">نحتفظ بحق تعديل أو تحديث الشروط أو الخدمات في أي وقت، وسيتم إشعار المستخدمين بالتغييرات الجوهرية.</p>
+            <p *ngIf="language === 'en'">We reserve the right to modify or update the terms or services at any time, and users will be notified of material changes.</p>
           </div>
         </div>
 
         <!-- Section 8 -->
         <div class="privacy-card contact-card">
           <div class="card-header">
-            <h2 class="strong">8. إنهاء الخدمة</h2>
+            <h2 class="strong" *ngIf="language === 'ar'">8. إنهاء الخدمة</h2>
+            <h2 class="strong" *ngIf="language === 'en'">8. Service Termination</h2>
           </div>
           <div class="card-content">
-            <p>يحق لنا تعليق أو إلغاء حساب أي مستخدم يخالف الشروط أو يستخدم التطبيق بشكل غير قانوني.</p>
+            <p *ngIf="language === 'ar'">يحق لنا تعليق أو إلغاء حساب أي مستخدم يخالف الشروط أو يستخدم التطبيق بشكل غير قانوني.</p>
+            <p *ngIf="language === 'en'">We reserve the right to suspend or cancel the account of any user who violates the terms or uses the application unlawfully.</p>
           </div>
         </div>
 
         <!-- Section 9 -->
         <div class="privacy-card contact-card">
           <div class="card-header">
-            <h2 class="strong">9. القانون الواجب تطبيقه</h2>
+            <h2 class="strong" *ngIf="language === 'ar'">9. القانون الواجب تطبيقه</h2>
+            <h2 class="strong" *ngIf="language === 'en'">9. Applicable Law</h2>
           </div>
           <div class="card-content">
-            <p>تخضع هذه الشروط وتُفسر وفق قوانين المملكة الأردنية الهاشمية، ويُحال أي نزاع إلى المحاكم المختصة داخل العاصمة عمّان.</p>
+            <p *ngIf="language === 'ar'">تخضع هذه الشروط وتُفسر وفق قوانين المملكة الأردنية الهاشمية، ويُحال أي نزاع إلى المحاكم المختصة داخل العاصمة عمّان.</p>
+            <p *ngIf="language === 'en'">These terms are governed and interpreted in accordance with the laws of the Hashemite Kingdom of Jordan, and any disputes shall be referred to the competent courts in the capital, Amman.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
   <section class="d-flex justify-content-center align-items-center flex-column mb-5">
-    <img src="terms-2.png" alt="">
+    <img src="terms-2.png" alt="" class="bottom-banner">
   </section>
 </div>
