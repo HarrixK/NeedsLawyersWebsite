@@ -77,8 +77,8 @@ p {
   grid-column: 1;
   grid-row: 1;
   padding-left: 1rem;
-  text-align: start;
-  align-self: start;
+  text-align: center;
+  align-self: center;
   border-left: 4px solid #E7E7E7;
 }
 
