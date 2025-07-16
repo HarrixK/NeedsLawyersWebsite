@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnInit, OnDestroy } from '@angular/core';
 import { Language } from '../../services/language';
 import { Subscription } from 'rxjs';
 
@@ -8,10 +8,11 @@ import { Subscription } from 'rxjs';
   templateUrl: './hero.html',
   styleUrl: './hero.css'
 })
-export class Hero {
+export class Hero implements OnInit, OnDestroy {
   isLoading = signal(false);
   currentSlide = signal(0);
   language: 'ar' | 'en' = 'ar';
+  lawyers: any[] = [];
   private languageSubscription!: Subscription
 
   constructor(
@@ -23,38 +24,18 @@ export class Hero {
       currentLanguage => {
         if (currentLanguage === 'ar' || currentLanguage === 'en') {
           this.language = currentLanguage;
+          this.updateLawyers();
         }
       }
     );
   }
 
-  lawyers = [
-    {
-      name: this.language === 'ar' ? 'أحمد محمد' : 'Ahmed Mohammed',
-      specialty: this.language === 'ar' ? 'محامي قانون تجاري' : 'Commercial Law Lawyer',
-      image: 'khalid.png',
-      rating: '4.9'
-    },
-    {
-      name: this.language === 'ar' ? 'فاطمة علي' : 'Fatima Ali',
-      specialty: this.language === 'ar' ? 'محامية أحوال شخصية' : 'Family Law Lawyer',
-      image: 'ahmed.png',
-      rating: '4.8'
-    },
-    {
-      name: this.language === 'ar' ? 'محمد السالم' : 'Mohammed Al-Salem',
-      specialty: this.language === 'ar' ? 'محامي قانون جنائي' : 'Criminal Law Lawyer',
-      image: 'khalid.png',
-      rating: '4.7'
-    },
-    {
-      name: this.language === 'ar' ? 'سارة أحمد' : 'Sarah Ahmed',
-      specialty: this.language === 'ar' ? 'محامية قانون عقاري' : 'Real Estate Law Lawyer',
-      image: 'khwalid.png',
-      rating: '4.9'
+  ngOnDestroy() {
+    if (this.languageSubscription) {
+      this.languageSubscription.unsubscribe();
     }
-  ];
-  
+  }
+
   nextSlide() {
     this.currentSlide.update(current => 
       current === this.lawyers.length - 1 ? 0 : current + 1
@@ -67,8 +48,7 @@ export class Hero {
     );
   }
 
-  toggleLanguage() {
-    this.language = this.language === 'ar' ? 'en' : 'ar';
+  private updateLawyers() {
     this.lawyers = [
       {
         name: this.language === 'ar' ? 'أحمد محمد' : 'Ahmed Mohammed',

@@ -1,20 +1,25 @@
-<section class="container-custom">
-  <div class="d-flex gap-5">
-    <div class="card border-0" dir="rtl">
+<section class="container-custom" [attr.dir]="language === 'ar' ? 'rtl' : 'ltr'">
+  <div class="d-flex gap-5" [class.flex-row-reverse]="language === 'en'">
+    <div class="card border-0">
       <div class="card-body">
-        <h2 class="text-end">تواصل معنا</h2>
+        <h2 [class.text-end]="language === 'ar'" [class.text-start]="language === 'en'">
+          <span *ngIf="language === 'ar'">تواصل معنا</span>
+          <span *ngIf="language === 'en'">Contact Us</span>
+        </h2>
         <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
           <div class="form-row">
             <div class="form-group">
               <input type="text" id="firstName" formControlName="firstName" class="form-control"
-                [class.is-invalid]="isFieldInvalid('firstName')" placeholder="الاسم الأول">
+                [class.is-invalid]="isFieldInvalid('firstName')" 
+                [placeholder]="language === 'ar' ? 'الاسم الأول' : 'First Name'">
               <div class="invalid-feedback" *ngIf="isFieldInvalid('firstName')">
                 {{ getErrorMessage('firstName') }}
               </div>
             </div>
             <div class="form-group">
               <input type="text" id="lastName" formControlName="lastName" class="form-control"
-                [class.is-invalid]="isFieldInvalid('lastName')" placeholder="الاسم الأخير">
+                [class.is-invalid]="isFieldInvalid('lastName')" 
+                [placeholder]="language === 'ar' ? 'الاسم الأخير' : 'Last Name'">
               <div class="invalid-feedback" *ngIf="isFieldInvalid('lastName')">
                 {{ getErrorMessage('lastName') }}
               </div>
@@ -23,14 +28,16 @@
           <div class="form-row">
             <div class="form-group">
               <input type="email" id="email" formControlName="email" class="form-control"
-                [class.is-invalid]="isFieldInvalid('email')" placeholder="البريد الإلكتروني">
+                [class.is-invalid]="isFieldInvalid('email')" 
+                [placeholder]="language === 'ar' ? 'البريد الإلكتروني' : 'Email Address'">
               <div class="invalid-feedback" *ngIf="isFieldInvalid('email')">
                 {{ getErrorMessage('email') }}
               </div>
             </div>
             <div class="form-group">
               <input type="tel" id="phone" formControlName="phone" class="form-control"
-                [class.is-invalid]="isFieldInvalid('phone')" placeholder="رقم الهاتف">
+                [class.is-invalid]="isFieldInvalid('phone')" 
+                [placeholder]="language === 'ar' ? 'رقم الهاتف' : 'Phone Number'">
               <div class="invalid-feedback" *ngIf="isFieldInvalid('phone')">
                 {{ getErrorMessage('phone') }}
               </div>
@@ -38,22 +45,28 @@
           </div>
           <div class="form-group full-width">
             <textarea id="message" formControlName="message" class="form-control"
-              [class.is-invalid]="isFieldInvalid('message')" placeholder="رسالتك" rows="4"></textarea>
+              [class.is-invalid]="isFieldInvalid('message')" 
+              [placeholder]="language === 'ar' ? 'رسالتك' : 'Your Message'" 
+              rows="4"></textarea>
             <div class="invalid-feedback" *ngIf="isFieldInvalid('message')">
               {{ getErrorMessage('message') }}
             </div>
           </div>
           <div class="form-actions">
             <button type="submit" class="btn btn-primary" [disabled]="contactForm.invalid && submitted">
-              إرسال الرسالة
+              <span *ngIf="language === 'ar'">إرسال الرسالة</span>
+              <span *ngIf="language === 'en'">Send Message</span>
             </button>
-            <button type="button" class="btn-secondary" (click)="clearForm()">تفريغ الحقول</button>
+            <button type="button" class="btn-secondary" (click)="clearForm()">
+              <span *ngIf="language === 'ar'">تفريغ الحقول</span>
+              <span *ngIf="language === 'en'">Clear Fields</span>
+            </button>
           </div>
         </form>
       </div>
     </div>
     <div class="contact-image-section">
-      <img src="contact.png" alt="Contact Us">
+      <img [src]="language === 'en' ? 'contact-en.png' : 'contact.png'" alt="Contact Us">
     </div>
   </div>
 </section>

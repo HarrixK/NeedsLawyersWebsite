@@ -1,8 +1,10 @@
-<section class="reviews">
-     <div class="reviews-header">
-      <div class="section-badge">محامونا</div>
-      <h2>تعرف على نخبة<br>المحامين <span class="highlight">لدينا</span></h2>
-    </div>
+<section class="reviews" [attr.dir]="language === 'ar' ? 'rtl' : 'ltr'">
+  <div [class.reviews-header]="language == 'ar'" [class.reviews-header-ltr]="language == 'en'">
+    <div class="section-badge" *ngIf="language === 'ar'">محامونا</div>
+    <div class="section-badge" *ngIf="language === 'en'">Our Lawyers</div>
+    <h2 *ngIf="language === 'ar'">تعرف على نخبة<br>المحامين <span class="highlight">لدينا</span></h2>
+    <h2 *ngIf="language === 'en'">Meet Our Elite<br>Team of <span class="highlight">Lawyers</span></h2>
+  </div>
   <div class="container">    
     <div class="reviews-carousel">
       <button class="carousel-btn prev-btn" 
@@ -10,12 +12,12 @@
               [disabled]="currentSlide === 0"
               aria-label="Previous">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path [attr.d]="language === 'ar' ? 'M9 18L15 12L9 6' : 'M15 18L9 12L15 6'" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
       
       <div class="reviews-grid-container">
-        <div class="reviews-grid" [style.transform]="'translateX(' + (-currentSlide * slideWidth) + 'px)'">
+        <div class="reviews-grid" [style.transform]="getTransform()">
           <div class="review-card" *ngFor="let lawyer of lawyers">
             <div class="lawyer-image">
               <img [src]="lawyer.image" [alt]="lawyer.name" />
@@ -39,7 +41,7 @@
               [disabled]="currentSlide >= maxSlides"
               aria-label="Next">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path [attr.d]="language === 'ar' ? 'M15 18L9 12L15 6' : 'M9 18L15 12L9 6'" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
     </div>

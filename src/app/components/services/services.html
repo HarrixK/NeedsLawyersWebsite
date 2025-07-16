@@ -1,28 +1,33 @@
-<section class="services">
+<section class="services" [attr.dir]="currentLanguage === 'ar' ? 'ltr' : 'rtl'">
   <div class="container">
     <div class="services-content">
-      <div class="services-text">
-        <h2>خبراتنا القانونية<br><span class="highlight">الشاملة</span></h2>
-        <p>سجّل لدينا فريق كبير من المحامين المهرة ... ملتزمون بتقديم حلول قانونية
+      <div class="services-text" [class.services-text-ltr]="currentLanguage === 'en'">
+        <h2 *ngIf="currentLanguage === 'ar'">خبراتنا القانونية<br><span class="highlight">الشاملة</span></h2>
+        <h2 *ngIf="currentLanguage === 'en'">Our comprehensive legal<br><span class="highlight">expertise</span></h2>
+        
+        <p *ngIf="currentLanguage === 'ar'">سجّل لدينا فريق كبير من المحامين المهرة ... ملتزمون بتقديم حلول قانونية
           فعالة وشاملة مصممة خصيصا لتلبية الاحتياجات الفريدة لجميع الأعضاء.
           فقط ضع استشارتك وسيصلك الرد.</p>
-        <p>نفخر بتقديم نخبة من المحاميون والمستشارون المستعدّون اتقديم
+        <p *ngIf="currentLanguage === 'en'">Sign up with us! We have a large team of skilled lawyers... committed to providing effective and comprehensive legal solutions tailored to meet the unique needs of all members. Just submit your consultation request, and you will receive a response.</p>
+        
+        <p *ngIf="currentLanguage === 'ar'">نفخر بتقديم نخبة من المحاميون والمستشارون المستعدّون اتقديم
           استشارات قانونية استثنائية مدعومة بسنوات من الخبرة وفهم عميق
-
           للقانون.</p>
+        <p *ngIf="currentLanguage === 'en'">We take pride in offering a select group of lawyers and consultants ready to provide exceptional legal advice backed by years of experience and a deep understanding of the law.</p>
       </div>
 
       <div class="services-images">
-        <div class="availability-badge">
+        <div [class.availability-badge]="currentLanguage=='ar'" [class.availability-badge-ltr]="currentLanguage === 'en'">
           <span class="time">24/7</span>
-          <p>خدمة على مدار<br>الساعة بالحضور<br>لمحكمة في أي وقت</p>
+          <p *ngIf="currentLanguage === 'ar'">خدمة على مدار<br>الساعة بالحضور<br>لمحكمة في أي وقت</p>
+          <p *ngIf="currentLanguage === 'en'">24/7 service: We are<br>ready to assist you<br>at any time</p>
         </div>
 
         <div class="main-image">
           <img src="placeholder2.png" alt="Legal Services" />
         </div>
 
-        <div class="secondary-image">
+        <div [class.secondary-image]="currentLanguage=='ar'" [class.secondary-image-ltr]="currentLanguage === 'en'">
           <img src="placeholder1.png" alt="Legal Consultation" />
         </div>
       </div>
@@ -30,7 +35,7 @@
   </div>
 </section>
 
-<section class="d-flex w-100 justify-content-center mb-5" style="margin: 0; padding: 0;">
+<section class="d-flex w-100 justify-content-center mb-5" style="margin: 0; padding: 0;" [attr.dir]="currentLanguage === 'ar' ? 'ltr' : 'rtl'">
   <div class="d-flex align-items-center w-100 gap-4" style="margin: 0; padding: 0;">
     <div class="statistics-image" style="width: 30%;">
       <img src="statistics.png" alt="Legal Office" class="img-fluid rounded" style="width: 100%; height: 300px;" />
@@ -38,7 +43,8 @@
 
     <div class="card border-0 justice-badge" style="width: 20%; height: 300px;">
       <div class="card-body text-center d-flex flex-column justify-content-between">
-        <button class="btn btn-secondary secondary-button">عدالة</button>
+        <button class="btn btn-secondary secondary-button" *ngIf="currentLanguage === 'ar'">عدالة</button>
+        <button class="btn btn-secondary secondary-button" *ngIf="currentLanguage === 'en'">Justice</button>
         <div class="justice-icon mt-3">
           <svg width="125" height="125" viewBox="0 0 125 125" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
@@ -48,7 +54,8 @@
             <path d="M41.6667 35.1562H10.4167" stroke="#CEAB63" stroke-width="5.20833" stroke-linecap="square" />
           </svg>
         </div>
-        <p class="mt-2">نضمن المساواة<br>والعدالة</p>
+        <p class="mt-2" *ngIf="currentLanguage === 'ar'">نضمن المساواة<br>والعدالة</p>
+        <p class="mt-2" *ngIf="currentLanguage === 'en'">We guarantee equality<br>and justice</p>
       </div>
     </div>
 
@@ -56,21 +63,24 @@
       <div class="card stat-card text-center" style="height: 300px; flex: 1;">
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
           <span class="stat-number">90%</span>
-          <p class="stat-text text-muted mt-1">نسبة رضى<br>العملاء</p>
+          <p class="stat-text text-muted mt-1" *ngIf="currentLanguage === 'ar'">نسبة رضى<br>العملاء</p>
+          <p class="stat-text text-muted mt-1" *ngIf="currentLanguage === 'en'">Customer<br>satisfaction rate</p>
         </div>
       </div>
 
       <div class="card stat-card text-center" style="height: 300px; flex: 1;">
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
           <span class="stat-number">65%</span>
-          <p class="stat-text text-muted mt-1">نسبة زيادة الاستشارات<br>السنوية</p>
+          <p class="stat-text text-muted mt-1" *ngIf="currentLanguage === 'ar'">نسبة زيادة الاستشارات<br>السنوية</p>
+          <p class="stat-text text-muted mt-1" *ngIf="currentLanguage === 'en'">Annual consultation<br>increase rate</p>
         </div>
       </div>
 
       <div class="card stat-card text-center" style="height: 300px; flex: 1;">
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
           <span class="stat-number">2000+</span>
-          <p class="stat-text text-muted mt-1">حالات في<br>السنة</p>
+          <p class="stat-text text-muted mt-1" *ngIf="currentLanguage === 'ar'">حالات في<br>السنة</p>
+          <p class="stat-text text-muted mt-1" *ngIf="currentLanguage === 'en'">Cases per<br>year</p>
         </div>
       </div>
     </div>

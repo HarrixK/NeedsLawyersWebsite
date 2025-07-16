@@ -1,4 +1,4 @@
-<section class="container d-flex justify-content-between">
+<section class="container d-flex justify-content-between" [attr.dir]="language === 'ar' ? 'rtl' : 'ltr'">
   <div class="cta-text d-flex justify-content-between align-items-center">
     <div class="w-auto">
       <div class="user-avatars">
@@ -22,8 +22,12 @@
       </div>
 
       <div class="testimonial">
-        <h3>علي مبيارك</h3>
-        <p class="location">السعودية</p>
+        <h3 *ngIf="language === 'ar'">علي مبيارك</h3>
+        <h3 *ngIf="language === 'en'">Ali Mubarak</h3>
+        
+        <p class="location" *ngIf="language === 'ar'">السعودية</p>
+        <p class="location" *ngIf="language === 'en'">Saudi Arabia</p>
+        
         <div class="rating">
           <div class="stars">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,21 +52,26 @@
             </svg>
           </div>
         </div>
-        <p class="testimonial-text">
+        
+        <p class="testimonial-text" *ngIf="language === 'ar'">
           فريق من المحامين ذوي الخبرة وملتزمون بتقديم خدمات قانونية<br>
           شاملة مصممة خصيصاً لموضعك الفريد.
+        </p>
+        <p class="testimonial-text" *ngIf="language === 'en'">
+          A team of experienced lawyers committed to providing comprehensive<br>
+          legal services specifically designed for your unique situation.
         </p>
       </div>
     </div>
 
     <div class="main-heading">
-      <h2><span class="highlight">رأي المستخدمين</span> <br>عن التطبيق</h2>
+      <h2 *ngIf="language === 'ar'"><span class="highlight">رأي المستخدمين</span> <br>عن التطبيق</h2>
+      <h2 *ngIf="language === 'en'"><span class="highlight">User Reviews</span> <br>About the App</h2>
     </div>
   </div>
 </section>
 
-
-<div class="cta-app position-absolute w-100">
+<div class="cta-app position-absolute w-100" [attr.dir]="language === 'ar' ? 'rtl' : 'ltr'">
   <div class="container">
     <div class="app-content">
       <div class="download-buttons">
@@ -72,25 +81,28 @@
               <img src="apple-logo.svg" alt="Download on App Store" />
             </div>
             <div class="download-text">
-              <span>Download on the<br><strong style="font-size: large;">App Store</strong></span>
+              <span *ngIf="language === 'ar'">حمل من<br><strong style="font-size: large;">App Store</strong></span>
+              <span *ngIf="language === 'en'">Download on the<br><strong style="font-size: large;">App Store</strong></span>
             </div>
-
           </div>
         </button>
 
         <button routerLink="/contact" class="cta-button">
           <div class="flex gap-10">
             <div>
-              <img src="google-play-logo.svg" alt="Download on App Store" />
+              <img src="google-play-logo.svg" alt="Download on Google Play" />
             </div>
             <div class="download-text">
-              <span>Get it on the<br><b style="font-size: large;">Google Play</b></span>
+              <span *ngIf="language === 'ar'">احصل عليه من<br><b style="font-size: large;">Google Play</b></span>
+              <span *ngIf="language === 'en'">Get it on<br><b style="font-size: large;">Google Play</b></span>
             </div>
           </div>
         </button>
       </div>
+      
       <div class="app-download">
-        <h3>قم بتنزيل تطبيق Needs Lawyers<br>على هاتفك المحمول الآن!</h3>
+        <h3 *ngIf="language === 'ar'">قم بتنزيل تطبيق Needs Lawyers<br>على هاتفك المحمول الآن!</h3>
+        <h3 *ngIf="language === 'en'">Download the Needs Lawyers app<br>on your mobile phone now!</h3>
       </div>
 
       <div class="phone-mockup">
