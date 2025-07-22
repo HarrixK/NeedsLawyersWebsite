@@ -6,7 +6,6 @@
 
 .reviews {
   padding: 2rem 0;
-  background-color: #f8f9fa;
   direction: rtl;
 }
 
@@ -22,7 +21,9 @@
   display: flex;
   gap: 5rem;
 }
+
 .reviews-header-ltr {
+  align-items: center;
   text-align: center;
   margin-bottom: 2.5rem;
   direction: rtl;
@@ -131,7 +132,7 @@
 }
 
 .review-card {
-  background-color: white;
+  background-color: #f8f9fa;
   border-radius: 20px;
   padding: 2rem;
   text-align: center;
@@ -204,41 +205,41 @@
   .reviews {
     padding: 1rem 0;
   }
-  
+
   .reviews-header {
     margin-bottom: 2.5rem;
   }
-  
+
   .reviews-header h2 {
     font-size: 2.5rem;
   }
-  
+
   .section-badge {
     font-size: 2.5rem;
   }
-  
+
   .reviews-carousel {
     gap: 1.5rem;
   }
-  
+
   .review-card {
     min-width: calc(33.333% - 1.33rem);
     padding: 1.5rem;
   }
-  
+
   .lawyer-image {
     width: 150px;
     height: 150px;
   }
-  
+
   .review-card h3 {
     font-size: 1.3rem;
   }
-  
+
   .location {
     font-size: 0.9rem;
   }
-  
+
   .rating-score {
     font-size: 0.9rem;
   }
@@ -249,38 +250,38 @@
   .reviews {
     padding: 1rem 0;
   }
-  
+
   .container {
     padding: 0 1rem;
   }
-  
+
   .reviews-header {
     margin-bottom: 2rem;
   }
-  
+
   .reviews-header h2 {
     font-size: 2rem;
   }
-  
+
   .section-badge {
     font-size: 2rem;
   }
-  
+
   .reviews-carousel {
     flex-direction: column;
     gap: 1.5rem;
   }
-  
+
   .carousel-btn {
     display: none;
   }
-  
+
   .reviews-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
-  
+
   .review-card {
     min-width: auto;
     padding: 1.5rem;
@@ -288,25 +289,25 @@
     border-radius: 12px;
     border: 1px solid rgba(206, 171, 99, 0.2);
   }
-  
+
   .lawyer-image {
     width: 120px;
     height: 120px;
     margin-bottom: 1rem;
   }
-  
+
   .review-card h3 {
     font-size: 1.2rem;
   }
-  
+
   .location {
     font-size: 0.95rem;
   }
-  
+
   .rating-score {
     font-size: 0.95rem;
   }
-  
+
   .stars svg {
     width: 14px;
     height: 14px;
@@ -318,44 +319,44 @@
   .reviews {
     padding: 1.5rem 0;
   }
-  
+
   .reviews-header {
     margin-bottom: 1.5rem;
   }
-  
+
   .reviews-header h2 {
     font-size: 1.8rem;
   }
-  
+
   .section-badge {
     font-size: 1.8rem;
   }
-  
+
   .reviews-grid {
     gap: 1rem;
   }
-  
+
   .review-card {
     padding: 1rem;
   }
-  
+
   .lawyer-image {
     width: 100px;
     height: 100px;
   }
-  
+
   .review-card h3 {
     font-size: 1.1rem;
   }
-  
+
   .location {
     font-size: 0.9rem;
   }
-  
+
   .rating-score {
     font-size: 0.9rem;
   }
-  
+
   .stars svg {
     width: 12px;
     height: 12px;
@@ -367,28 +368,28 @@
   .reviews-header h2 {
     font-size: 1.2rem;
   }
-  
+
   .section-badge {
     font-size: 1.2rem;
   }
-  
+
   .review-card {
     padding: 0.8rem;
   }
-  
+
   .lawyer-image {
     width: 90px;
     height: 90px;
   }
-  
+
   .review-card h3 {
     font-size: 1rem;
   }
-  
+
   .location {
     font-size: 0.85rem;
   }
-  
+
   .rating-score {
     font-size: 0.85rem;
   }
@@ -399,36 +400,36 @@
   .reviews {
     padding: 1rem 0;
   }
-  
+
   .reviews-header h2 {
     font-size: 3rem;
   }
-  
+
   .section-badge {
     font-size: 3.5rem;
   }
-  
+
   .review-card {
     min-width: calc(20% - 1.6rem);
   }
-  
+
   .lawyer-image {
     width: 200px;
     height: 200px;
   }
-  
+
   .review-card h3 {
     font-size: 1.6rem;
   }
-  
+
   .location {
     font-size: 1.2rem;
   }
-  
+
   .rating-score {
     font-size: 1.2rem;
   }
-  
+
   .stars svg {
     width: 18px;
     height: 18px;

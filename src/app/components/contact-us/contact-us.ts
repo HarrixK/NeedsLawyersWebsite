@@ -66,18 +66,19 @@ export class ContactUs implements OnInit, OnDestroy {
       this.isLoading = true;
       
       const formValue = this.contactForm.value;
+      const emailBody = JSON.stringify({
+        firstName: formValue.firstName,
+        lastName: formValue.lastName,
+        email: formValue.email,
+        phone: formValue.phone,
+        message: formValue.message
+      });
       
       // Prepare email data
       const emailData: EmailRequest = {
         emailAddress: formValue.email,
         subject: this.language === 'ar' ? 'استفسار من موقع NeedsLawyers' : 'Inquiry from NeedsLawyers',
-        body: {
-          firstName: formValue.firstName,
-          lastName: formValue.lastName,
-          email: formValue.email,
-          phone: formValue.phone,
-          message: formValue.message
-        }
+        body: `firstName=${formValue.firstName}&lastName=${formValue.lastName}&email=${formValue.email}&phone=${formValue.phone}&message=${formValue.message}`
       };
 
       // Send email

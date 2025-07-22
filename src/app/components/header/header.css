@@ -234,6 +234,18 @@ ul li a {
     padding: 0.6rem 1rem;
     font-size: 0.95rem;
   }
+
+  .navbar-nav {
+    flex-direction: column !important;
+  }
+
+  [dir="ltr"] .navbar-nav {
+    align-items: start;
+  }
+
+  [dir="rtl"] .navbar-nav {
+    align-items: start;
+  }
 } 
 
 .language-toggle {
