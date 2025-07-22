@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { Language } from '../../services/language';
+import { EmailRequest, EmailService } from '../../services/email';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -12,12 +13,14 @@ import { Subscription } from 'rxjs';
 export class ContactUs implements OnInit, OnDestroy {
   contactForm!: FormGroup;
   submitted = false;
+  isLoading = false; // Add loading state
   language: 'ar' | 'en' = 'ar';
   private languageSubscription!: Subscription;
 
   constructor(
     private fb: FormBuilder,
-    private languageService: Language
+    private languageService: Language,
+    private emailService: EmailService // Inject email service
   ) {}
 
   ngOnInit() {
@@ -59,13 +62,46 @@ export class ContactUs implements OnInit, OnDestroy {
   onSubmit() {
     this.submitted = true;
     
-    if (this.contactForm.valid) {
-      console.log('Form submitted:', this.contactForm.value);
-      // Handle form submission here
-      const successMessage = this.language === 'ar' ? 'تم إرسال الرسالة بنجاح!' : 'Message sent successfully!';
-      alert(successMessage);
-      this.clearForm();
-    } else {
+    if (this.contactForm.valid && !this.isLoading) {
+      this.isLoading = true;
+      
+      const formValue = this.contactForm.value;
+      
+      // Prepare email data
+      const emailData: EmailRequest = {
+        emailAddress: formValue.email,
+        subject: this.language === 'ar' ? 'استفسار من موقع NeedsLawyers' : 'Inquiry from NeedsLawyers',
+        body: {
+          firstName: formValue.firstName,
+          lastName: formValue.lastName,
+          email: formValue.email,
+          phone: formValue.phone,
+          message: formValue.message
+        }
+      };
+
+      // Send email
+      this.emailService.sendEmail(emailData).subscribe({
+        next: (response) => {
+          console.log('Email sent successfully:', response);
+          const successMessage = this.language === 'ar' 
+            ? 'تم إرسال الرسالة بنجاح! سنتواصل معك قريباً.' 
+            : 'Message sent successfully! We will contact you soon.';
+          alert(successMessage);
+          this.clearForm();
+        },
+        error: (error) => {
+          console.error('Error sending email:', error);
+          const errorMessage = this.language === 'ar' 
+            ? 'حدث خطأ في إرسال الرسالة. يرجى المحاولة مرة أخرى.' 
+            : 'An error occurred while sending the message. Please try again.';
+          alert(errorMessage);
+        },
+        complete: () => {
+          this.isLoading = false;
+        }
+      });
+    } else if (!this.contactForm.valid) {
       console.log('Form is invalid');
       this.markAllFieldsAsTouched();
     }

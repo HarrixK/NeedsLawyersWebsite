@@ -16,6 +16,7 @@ import { TermsAndConditionsComponent } from './components/terms-and-conditions/t
 import { AppRoutingModule } from './app-routing-module';
 import { Layout } from './layout/layout';
 import { Home } from './components/home/home';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { Home } from './components/home/home';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
