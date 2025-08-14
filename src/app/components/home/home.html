@@ -1,5 +1,5 @@
 <section id="hero" class="min-h-screen">
-  <app-hero></app-hero>
+  <app-hero (navigateToSection)="scrollToSection($event)"></app-hero>
 </section>
 
 <!-- Services Section -->
@@ -27,7 +27,7 @@
   <div class="container">
     <app-cta></app-cta>
   </div>
-</section>
+</section> 
 
 <!-- Contact Section -->
 <section id="contact" class="py-16">

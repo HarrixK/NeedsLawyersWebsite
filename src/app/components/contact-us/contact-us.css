@@ -4,21 +4,6 @@
   justify-content: center;
 }
 
-.d-flex {
-  display: flex;
-  gap: 5rem;
-  align-items: center;
-}
-
-.card {
-  border: none;
-  flex: 1;
-  max-width: 50%;
-}
-
-.card-body {
-  padding: 2rem;
-}
 
 .card-body h2 {
   font-size: 2.5rem;
@@ -31,13 +16,6 @@
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  max-width: 500px;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
 }
 
@@ -57,7 +35,6 @@
   font-size: 1rem;
   color: #333;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
 }
 
 .form-control:focus {
@@ -71,7 +48,6 @@
 }
 
 textarea.form-control {
-  resize: vertical;
   min-height: 120px;
 }
 
@@ -125,7 +101,6 @@ textarea.form-control {
   border-radius: 20px 0 0 20px;
   padding: 2rem;
   flex: 1;
-  max-width: 50%;
   position: relative;
   padding: 0px 0px 20px 20px;
   border-radius: 20px 0px 0px 20px;
@@ -137,7 +112,7 @@ textarea.form-control {
   object-fit: contain;
 }
 
-.contact-image-section::before {
+/* .contact-image-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -146,27 +121,20 @@ textarea.form-control {
   bottom: 0;
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="60" cy="30" r="1.5" fill="rgba(255,255,255,0.05)"/><circle cx="30" cy="70" r="1.5" fill="rgba(255,255,255,0.05)"/></svg>') repeat;
   opacity: 0.3;
-}
-.container-custom[dir="ltr"] {
-  direction: ltr;
-}
-
-.container-custom[dir="rtl"] {
-  direction: rtl;
-}
+} */
 
 /* Form layout adjustments for LTR */
 .container-custom[dir="ltr"] .form-control {
-  text-align: left;
+  text-align: right;
 }
 
 .container-custom[dir="rtl"] .form-control {
-  text-align: right;
+  text-align: left;
 }
 
 /* Button alignment for different languages */
 .container-custom[dir="ltr"] .form-actions {
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 
 .container-custom[dir="rtl"] .form-actions {
@@ -208,11 +176,6 @@ textarea.form-control {
   }
    .d-flex.flex-row-reverse {
     flex-direction: column !important;
-  }
-  
-  .container-custom[dir="ltr"] .form-actions,
-  .container-custom[dir="rtl"] .form-actions {
-    justify-content: center;
   }
   
   .container-custom {
@@ -408,11 +371,17 @@ textarea.form-control {
   pointer-events: none;
 }
 
-[dir="rtl"] .form-group.has-validation .validation-icon {
-  left: auto;
-  right: 0.75rem;
+.form-control.is-invalid:dir(ltr),
+.was-validated .form-control:invalid:dir(ltr) {
+  background-position: right calc(.375em + .1875rem) center;
+  padding-right: calc(1.5em + .75rem);
+  padding-left: 0.75rem;
 }
 
-.card {
-  background-color: transparent;
+.form-control.is-invalid:dir(rtl),
+.was-validated .form-control:invalid:dir(rtl) {
+  background-position: left calc(.375em + .1875rem) center;
+  padding-left: calc(1.5em + .75rem);
+  padding-right: 0.75rem;
 }
+

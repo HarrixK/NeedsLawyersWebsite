@@ -1,5 +1,5 @@
 .hero {
-  background-image: url('../../../../public/banner.png');
+  background-image: url('../../../../public/Background.webp');
   background-size: 100% 100%;
   background-position: center;
   position: relative;
@@ -12,7 +12,7 @@
 }
 
 .hero-ltr {
-  background-image: url('../../../../public/banner-ltr.png');
+  background-image: url('../../../../public/Background.webp');
 }
 
 .hero-overlay {
@@ -42,9 +42,11 @@ h1 {
 
 
 p {
-  color: #B7B7B7;
+  color: #D2D2D2;
   max-width: 600px;
   font-weight: 100;
+  font-size: large;
+  line-height: initial;
 }
 
 .primary-color {

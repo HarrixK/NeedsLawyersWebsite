@@ -13,14 +13,14 @@ import { Subscription } from 'rxjs';
 export class ContactUs implements OnInit, OnDestroy {
   contactForm!: FormGroup;
   submitted = false;
-  isLoading = false; // Add loading state
+  isLoading = false;
   language: 'ar' | 'en' = 'ar';
   private languageSubscription!: Subscription;
 
   constructor(
     private fb: FormBuilder,
     private languageService: Language,
-    private emailService: EmailService // Inject email service
+    private emailService: EmailService
   ) {}
 
   ngOnInit() {
@@ -45,14 +45,15 @@ export class ContactUs implements OnInit, OnDestroy {
       firstName: ['', [Validators.required, Validators.minLength(2), Validators.pattern(/^[a-zA-Zأ-ي\s]+$/)]],
       lastName: ['', [Validators.required, Validators.minLength(2), Validators.pattern(/^[a-zA-Zأ-ي\s]+$/)]],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [Validators.required, this.phoneValidator]],
-      message: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(500)]]
+      phone: ['', [Validators.required, Validators.minLength(13), this.phoneValidator]],
+      message: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(500)]],
+      subject: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(500)]]
     });
   }
 
   // Custom phone validator
   phoneValidator(control: AbstractControl): { [key: string]: any } | null {
-    const phoneRegex = /^((\+966)|0)?[5-9]\d{8}$/; // Saudi phone number format
+    const phoneRegex = /^\+[1-9]\d{9,11}$/;
     if (control.value && !phoneRegex.test(control.value)) {
       return { 'invalidPhone': true };
     }
@@ -66,19 +67,13 @@ export class ContactUs implements OnInit, OnDestroy {
       this.isLoading = true;
       
       const formValue = this.contactForm.value;
-      const emailBody = JSON.stringify({
-        firstName: formValue.firstName,
-        lastName: formValue.lastName,
-        email: formValue.email,
-        phone: formValue.phone,
-        message: formValue.message
-      });
-      
+      // subject: this.language === 'ar' ? 'استفسار من موقع NeedsLawyers' : 'Inquiry from NeedsLawyers',
       // Prepare email data
       const emailData: EmailRequest = {
-        emailAddress: formValue.email,
-        subject: this.language === 'ar' ? 'استفسار من موقع NeedsLawyers' : 'Inquiry from NeedsLawyers',
-        body: `firstName=${formValue.firstName}&lastName=${formValue.lastName}&email=${formValue.email}&phone=${formValue.phone}&message=${formValue.message}`
+        Name: formValue.firstName + " " + formValue.lastName,
+        Email: formValue.email,
+        Subject: formValue.subject,
+        Body: `firstName=${formValue.firstName}&lastName=${formValue.lastName}&email=${formValue.email}&phone=${formValue.phone}&message=${formValue.message}`
       };
 
       // Send email
@@ -156,8 +151,8 @@ export class ContactUs implements OnInit, OnDestroy {
     }
     if (errors['invalidPhone']) {
       return this.language === 'ar' 
-        ? 'يرجى إدخال رقم هاتف صحيح (مثال: 0501234567)'
-        : 'Please enter a valid phone number (example: 0501234567)';
+        ? 'يرجى إدخال رقم هاتف صحيح (مثال: +XXXXXXXXXXXX)'
+        : 'Please enter a valid phone number (example: +XXXXXXXXXXXX)'
     }
     
     return '';
@@ -191,7 +186,8 @@ export class ContactUs implements OnInit, OnDestroy {
       'lastName': 'الاسم الأخير',
       'email': 'البريد الإلكتروني',
       'phone': 'رقم الهاتف',
-      'message': 'الرسالة'
+      'message': 'الرسالة',
+      'subject': 'الموضوع'
     };
     
     const namesEn: { [key: string]: string } = {
@@ -199,7 +195,8 @@ export class ContactUs implements OnInit, OnDestroy {
       'lastName': 'Last name',
       'email': 'Email',
       'phone': 'Phone number',
-      'message': 'Message'
+      'message': 'Message',
+      'subject': 'Subject'
     };
     
     const names = this.language === 'ar' ? namesAr : namesEn;

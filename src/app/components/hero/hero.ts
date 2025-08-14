@@ -1,6 +1,7 @@
-import { Component, signal, OnInit, OnDestroy } from '@angular/core';
+import { Component, signal, OnInit, OnDestroy, EventEmitter, Output } from '@angular/core';
 import { Language } from '../../services/language';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hero',
@@ -14,9 +15,11 @@ export class Hero implements OnInit, OnDestroy {
   language: 'ar' | 'en' = 'ar';
   lawyers: any[] = [];
   private languageSubscription!: Subscription
+  @Output() navigateToSection = new EventEmitter<string>();
 
   constructor(
-    private languageService: Language
+    private languageService: Language,
+    private router: Router,
   ) {}
 
   ngOnInit() {
@@ -75,5 +78,19 @@ export class Hero implements OnInit, OnDestroy {
         rating: '4.9'
       }
     ];
+  }
+
+  onNavClick(sectionId: string, event: Event) {
+    event.preventDefault();
+    
+    if (this.router.url === '/') {
+      this.navigateToSection.emit(sectionId);
+    } else {
+      this.router.navigate(['/']).then(() => {
+        setTimeout(() => {
+          this.navigateToSection.emit(sectionId);
+        }, 100);
+      });
+    }
   }
 }

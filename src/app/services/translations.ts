@@ -9,10 +9,10 @@ export const translations: { [key: string]: Translations } = {
       services: 'الخدمات',
       download: 'تنزيل التطبيق',
       contact: 'تواصل معنا',
-      email: 'info@needslawyers.com'
+      email: 'info@ilawyerapp.com'
     },
     footer: {
-      description: 'مرحباً بكم في "Needs Lawyers"، حيث تعتبر احتياجاتكم القانونية أولويتنا القصوى. فريقنا من المحامين ذوي الخبرة ملتزم بتقديم خدمات قانونية شاملة مصممة خصيصاً لموضعك الفريد.',
+      description: 'مرحباً بكم في "I-Lawyers"، حيث تعتبر احتياجاتكم القانونية أولويتنا القصوى. فريقنا من المحامين ذوي الخبرة ملتزم بتقديم خدمات قانونية شاملة مصممة خصيصاً لوضعك الفريد.',
       links: 'الروابط',
       contactUs: 'تواصل معنا',
       privacyPolicy: 'سياسة الخصوصية',
@@ -20,11 +20,11 @@ export const translations: { [key: string]: Translations } = {
       ourLawyers: 'محامونا',
       ourApp: 'تطبيقنا',
       callUs: 'اتصل بنا',
-      copyright: '© حقوق الطبع والنشر 2025، جميع الحقوق محفوظة Needs Lawyers'
+      copyright: '© حقوق الطبع والنشر 2025، جميع الحقوق محفوظة I-Lawyers'
     },
     hero: {
       title: 'احصل على استشارة قانونية من المحامي المختص',
-      subtitle: 'مرحبًا بكم في "Needs Lawyer"، حيث تعتبر احتياجاتك القانونية أولويتنا القصوى.',
+      subtitle: 'مرحبًا بكم في "I-Lawyer"، حيث تعتبر احتياجاتك القانونية أولويتنا القصوى.',
       lawyersButton: 'المحامون',
       downloadButton: 'حمل التطبيق الآن',
       outstandingLawyers: 'المحامون المتميزون',
@@ -37,7 +37,7 @@ export const translations: { [key: string]: Translations } = {
         privacy: 'سياسة الخصوصية'
       },
       lastUpdated: 'آخر تحديث: 15/07/2025',
-      introduction: 'نحن في أتاح فريق Needs Lawyers ملتزم بحماية خصوصيتك وضمان سرية بياناتك الشخصية. توضح هذه السياسة كيفية جمعنا واستخدامنا وحمايتنا لمعلوماتك عند استخدامك للتطبيق أو الموقع.',
+      introduction: 'نحن في أتاح فريق I-Lawyers ملتزم بحماية خصوصيتك وضمان سرية بياناتك الشخصية. توضح هذه السياسة كيفية جمعنا واستخدامنا وحمايتنا لمعلوماتك عند استخدامك للتطبيق أو الموقع.',
       sections: {
         informationWeCollect: 'المعلومات التي نجمعها',
         howWeUseInfo: 'كيفية استخدام المعلومات',
@@ -58,10 +58,10 @@ export const translations: { [key: string]: Translations } = {
       services: 'Services',
       download: 'Download App',
       contact: 'Contact Us',
-      email: 'info@needslawyers.com'
+      email: 'info@ilawyerapp.com'
     },
     footer: {
-      description: 'Welcome to "Needs Lawyers," where your legal needs are our top priority. Our team of experienced lawyers is committed to providing comprehensive legal services designed specifically for your unique situation.',
+      description: 'Welcome to "I-Lawyers," where your legal needs are our top priority. Our team of experienced lawyers is committed to providing comprehensive legal services designed specifically for your unique situation.',
       links: 'Links',
       contactUs: 'Contact Us',
       privacyPolicy: 'Privacy Policy',
@@ -69,11 +69,11 @@ export const translations: { [key: string]: Translations } = {
       ourLawyers: 'Our Lawyers',
       ourApp: 'Our App',
       callUs: 'Call Us',
-      copyright: '© Copyright 2025, All Rights Reserved Needs Lawyers'
+      copyright: '© Copyright 2025, All Rights Reserved I-Lawyers'
     },
     hero: {
       title: 'Get Legal Consultation from Expert Lawyers',
-      subtitle: 'Welcome to "Needs Lawyer," where your legal needs are our top priority.',
+      subtitle: 'Welcome to "I-Lawyer," where your legal needs are our top priority.',
       lawyersButton: 'Our Lawyers',
       downloadButton: 'Download the App Now',
       outstandingLawyers: 'Outstanding Lawyers',
@@ -86,7 +86,7 @@ export const translations: { [key: string]: Translations } = {
         privacy: 'Privacy Policy'
       },
       lastUpdated: 'Last Updated: 15/07/2025',
-      introduction: 'We at Needs Lawyers team are committed to protecting your privacy and ensuring the confidentiality of your personal data. This policy explains how we collect, use, and protect your information when you use the app or website.',
+      introduction: 'We at I-Lawyers team are committed to protecting your privacy and ensuring the confidentiality of your personal data. This policy explains how we collect, use, and protect your information when you use the app or website.',
       sections: {
         informationWeCollect: 'Information We Collect',
         howWeUseInfo: 'How We Use Information',

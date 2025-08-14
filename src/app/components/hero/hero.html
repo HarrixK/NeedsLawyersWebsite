@@ -1,6 +1,7 @@
 <section class="hero" [class.hero-ltr]="language === 'en'" [dir]="language === 'en' ? 'ltr' : 'rtl'">
-  <div class="container mt-5">
-    <h1 class="mt-5 mt-sm-0" *ngIf="language === 'ar'">
+  <div class="container mt-5 row">
+    <div class="col">
+      <h1 class="mt-5 mt-sm-0" *ngIf="language === 'ar'">
       احصل على استشارة قانونية <br>
       من <span class="primary-color">المحامي المختص</span>
     </h1>
@@ -9,16 +10,19 @@
       from <span class="primary-color">Expert Lawyers</span>
     </h1>
     <p class="mb-5 text-light-gray" *ngIf="language === 'ar'">
-      مرحبًا بكم في "Needs Lawyer"، حيث تعتبر احتياجاتك القانونية أولويتنا القصوى. فريقنا من المحامين ذوي
+      مرحبًا بكم في "I-Lawyer"، حيث تعتبر احتياجاتك القانونية أولويتنا القصوى. فريقنا من المحامين ذوي
       الخبرة ملتزم بتقديم استشارات قانونية شاملة تجيب بشكل فوري على احتياجاتك القانونيّة.
     </p>
     <p class="mb-5 text-light-gray" *ngIf="language === 'en'">
-      Welcome to "Needs Lawyer," where your legal needs are our top priority. Our team of experienced lawyers is committed to providing comprehensive legal consultations that promptly address your legal requirements.
+      Welcome to "I-Lawyer," where your legal needs are our top priority. Our team of experienced lawyers is committed to providing comprehensive legal consultations that promptly address your legal requirements.
     </p>
-    <button routerLink="/contact" class="cta-button ms-3 mb-3 mb-sm-0" *ngIf="language === 'ar'">المحامون</button>
-    <button routerLink="/contact" class="cta-button me-3 mb-3 mb-sm-0" *ngIf="language === 'en'">Our Lawyers</button>
-    <button routerLink="/services" class="secondary-button" *ngIf="language === 'ar'">حمل التطبيق الآن</button>
-    <button routerLink="/services" class="secondary-button" *ngIf="language === 'en'">Download the App Now</button>
+    <button href="#cta" (click)="onNavClick('cta', $event)" class="cta-button me-3 mb-3 mb-sm-0" *ngIf="language === 'en'">Download the App Now</button>
+    <button href="#reviews" (click)="onNavClick('reviews', $event)" class="secondary-button" *ngIf="language === 'en'">Our Lawyers</button>
+    
+
+    <button href="#cta" (click)="onNavClick('cta', $event)" class="cta-button ms-3 mb-3 mb-sm-0" *ngIf="language === 'ar'">حمل التطبيق الآن</button>
+    <button href="#reviews" (click)="onNavClick('reviews', $event)" class="secondary-button" *ngIf="language === 'ar'">المحامون</button>
+    
     <div></div>
 
     <!-- Carousel Section -->
@@ -67,6 +71,10 @@
           </button>
         </div>
       </div>
+    </div>
+    </div>
+    <div class="col-3 d-none d-lg-block">
+      <img src="/Mobile.webp" alt="I-Lawyer Logo" class="h-100 w-100 pt-5" />
     </div>
   </div>
 </section>

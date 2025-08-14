@@ -1,83 +1,100 @@
 <section class="container-custom" [attr.dir]="language === 'ar' ? 'ltr' : 'rtl'">
-  <div class="d-flex gap-5" [class.flex-row-reverse]="language === 'en'">
-    <div class="card border-0">
-      <div class="card-body">
-        <h2 [class.text-end]="language === 'ar'" [class.text-start]="language === 'en'">
-          <span *ngIf="language === 'ar'">تواصل معنا</span>
-          <span *ngIf="language === 'en'">Contact Us</span>
-        </h2>
-        <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <input type="text" id="firstName" formControlName="firstName" class="form-control"
-                [class.is-invalid]="isFieldInvalid('firstName')" 
-                [placeholder]="language === 'ar' ? 'الاسم الأول' : 'First Name'"
-                [disabled]="isLoading">
-              <div class="invalid-feedback" *ngIf="isFieldInvalid('firstName')">
-                {{ getErrorMessage('firstName') }}
+  <div class="row">
+    <div class="col-6">
+      <div class="card border-0">
+        <div class="card-body">
+          <h2 [class.text-end]="language === 'ar'" [class.text-start]="language === 'en'">
+            <span *ngIf="language === 'ar'">تواصل معنا</span>
+            <span *ngIf="language === 'en'">Contact Us</span>
+          </h2>
+          <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="row" [attr.dir]="language === 'en' ? 'ltr' : 'rtl'">
+              <div class="col-6">
+                <div class="form-group">
+                  <input type="text" id="firstName" formControlName="firstName" class="form-control"
+                    [class.is-invalid]="isFieldInvalid('firstName')"
+                    [placeholder]="language === 'ar' ? 'الاسم الأول' : 'First Name'" [disabled]="isLoading">
+                  <div class="invalid-feedback text-nowrap " *ngIf="isFieldInvalid('firstName')">
+                    {{ getErrorMessage('firstName') }}
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                  <input type="text" id="lastName" formControlName="lastName" class="form-control"
+                    [class.is-invalid]="isFieldInvalid('lastName')"
+                    [placeholder]="language === 'ar' ? 'الاسم الأخير' : 'Last Name'" [disabled]="isLoading">
+                  <div class="invalid-feedback text-nowrap" *ngIf="isFieldInvalid('lastName')">
+                    {{ getErrorMessage('lastName') }}
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="form-group">
-              <input type="text" id="lastName" formControlName="lastName" class="form-control"
-                [class.is-invalid]="isFieldInvalid('lastName')" 
-                [placeholder]="language === 'ar' ? 'الاسم الأخير' : 'Last Name'"
-                [disabled]="isLoading">
-              <div class="invalid-feedback" *ngIf="isFieldInvalid('lastName')">
-                {{ getErrorMessage('lastName') }}
+            <div class="row" [attr.dir]="language === 'en' ? 'ltr' : 'rtl'">
+              <div class="col-6">
+                <div class="form-group">
+                <input type="email" id="email" formControlName="email" class="form-control"
+                  [class.is-invalid]="isFieldInvalid('email')"
+                  [placeholder]="language === 'ar' ? 'البريد الإلكتروني' : 'Email Address'" [disabled]="isLoading">
+                <div class="invalid-feedback text-nowrap" *ngIf="isFieldInvalid('email')">
+                  {{ getErrorMessage('email') }}
+                </div>
+              </div>
+              </div>
+              <div class="col-6">
+                <div class="form-group">
+                <input type="tel" id="phone" formControlName="phone" class="form-control"
+                  [class.is-invalid]="isFieldInvalid('phone')"
+                  [placeholder]="language === 'ar' ? 'رقم الهاتف' : 'Phone Number'" [disabled]="isLoading">
+                <div class="invalid-feedback text-nowrap" *ngIf="isFieldInvalid('phone')">
+                  {{ getErrorMessage('phone') }}
+                </div>
+              </div>
               </div>
             </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <input type="email" id="email" formControlName="email" class="form-control"
-                [class.is-invalid]="isFieldInvalid('email')" 
-                [placeholder]="language === 'ar' ? 'البريد الإلكتروني' : 'Email Address'"
+            <div class="form-group full-width" [attr.dir]="language === 'en' ? 'ltr' : 'rtl'">
+              <input id="subject" type="text" formControlName="subject" class="form-control"
+                [class.is-invalid]="isFieldInvalid('subject')"
+                [placeholder]="language === 'ar' ? 'الموضوع' : 'Subject'" rows="4"
                 [disabled]="isLoading">
-              <div class="invalid-feedback" *ngIf="isFieldInvalid('email')">
-                {{ getErrorMessage('email') }}
+              <div class="invalid-feedback text-nowrap" *ngIf="isFieldInvalid('subject')">
+                {{ getErrorMessage('subject') }}
               </div>
             </div>
-            <div class="form-group">
-              <input type="tel" id="phone" formControlName="phone" class="form-control"
-                [class.is-invalid]="isFieldInvalid('phone')" 
-                [placeholder]="language === 'ar' ? 'رقم الهاتف' : 'Phone Number'"
-                [disabled]="isLoading">
-              <div class="invalid-feedback" *ngIf="isFieldInvalid('phone')">
-                {{ getErrorMessage('phone') }}
+            <div class="form-group full-width" [attr.dir]="language === 'en' ? 'ltr' : 'rtl'">
+              <textarea id="message" formControlName="message" class="form-control"
+                [class.is-invalid]="isFieldInvalid('message')"
+                [placeholder]="language === 'ar' ? 'رسالتك' : 'Your Message'" rows="4"
+                [disabled]="isLoading"></textarea>
+              <div class="invalid-feedback text-nowrap" *ngIf="isFieldInvalid('message')">
+                {{ getErrorMessage('message') }}
               </div>
             </div>
-          </div>
-          <div class="form-group full-width">
-            <textarea id="message" formControlName="message" class="form-control"
-              [class.is-invalid]="isFieldInvalid('message')" 
-              [placeholder]="language === 'ar' ? 'رسالتك' : 'Your Message'" 
-              rows="4"
-              [disabled]="isLoading"></textarea>
-            <div class="invalid-feedback" *ngIf="isFieldInvalid('message')">
-              {{ getErrorMessage('message') }}
+            <div class="form-actions">
+              <button type="button" class="btn-secondary" (click)="clearForm()" [disabled]="isLoading">
+                <span *ngIf="language === 'ar'">تفريغ الحقول</span>
+                <span *ngIf="language === 'en'">Clear Fields</span>
+              </button>
+              <button type="submit" class="btn btn-primary"
+                [disabled]="isLoading || (contactForm.invalid && submitted)">
+                <span *ngIf="!isLoading">
+                  <span *ngIf="language === 'ar'">إرسال الرسالة</span>
+                  <span *ngIf="language === 'en'">Send Message</span>
+                </span>
+                <span *ngIf="isLoading">
+                  <span *ngIf="language === 'ar'">جاري الإرسال...</span>
+                  <span *ngIf="language === 'en'">Sending...</span>
+                </span>
+              </button>
             </div>
-          </div>
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary" [disabled]="isLoading || (contactForm.invalid && submitted)">
-              <span *ngIf="!isLoading">
-                <span *ngIf="language === 'ar'">إرسال الرسالة</span>
-                <span *ngIf="language === 'en'">Send Message</span>
-              </span>
-              <span *ngIf="isLoading">
-                <span *ngIf="language === 'ar'">جاري الإرسال...</span>
-                <span *ngIf="language === 'en'">Sending...</span>
-              </span>
-            </button>
-            <button type="button" class="btn-secondary" (click)="clearForm()" [disabled]="isLoading">
-              <span *ngIf="language === 'ar'">تفريغ الحقول</span>
-              <span *ngIf="language === 'en'">Clear Fields</span>
-            </button>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
-    <div class="contact-image-section">
-      <img src="contact.png" alt="Contact Us">
+    <div class="col-6">
+      <div class="contact-image-section">
+        <img src="contact.png" class="h-100 w-100" alt="Contact Us">
+      </div>
     </div>
   </div>
 </section>

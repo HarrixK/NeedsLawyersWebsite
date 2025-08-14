@@ -1,10 +1,10 @@
 <footer class="footer" [attr.dir]="currentLanguage === 'ar' ? 'rtl' : 'ltr'">
-  <div class="container">
+  <div class="container" [attr.dir]="currentLanguage === 'ar' ? 'rtl' : 'ltr'">
     <div class="footer-content">
       <div class="footer-section company-info">
         <div class="logo">
           <a href="/">
-            <img src="logo.png" alt="Needs Lawyers" />
+            <img src="logo.webp" alt="I-Lawyers" />
           </a>
         </div>
         <p class="company-description">
@@ -24,9 +24,9 @@
       <div class="footer-section">
         <h3>{{ translations[currentLanguage].footer.links }}</h3>
         <ul class="footer-links">
-          <li><a href="#contact">{{ translations[currentLanguage].footer.callUs }}</a></li>
-          <li><a href="#reviews">{{ translations[currentLanguage].footer.ourLawyers }}</a></li>
-          <li><a href="#services">{{ translations[currentLanguage].footer.ourApp }}</a></li>
+          <li><a href="#contact" (click)="onNavClick('contact', $event)">{{ translations[currentLanguage].footer.callUs }}</a></li>
+          <li><a href="#reviews" (click)="onNavClick('reviews', $event)">{{ translations[currentLanguage].footer.ourLawyers }}</a></li>
+          <li><a href="#cta" (click)="onNavClick('cta', $event)">{{ translations[currentLanguage].footer.ourApp }}</a></li>
           <li><a routerLink="/privacy-policy">{{ translations[currentLanguage].footer.privacyPolicy }}</a></li>
           <li><a routerLink="/terms-and-conditions">{{ translations[currentLanguage].footer.termsConditions }}</a></li>
         </ul>

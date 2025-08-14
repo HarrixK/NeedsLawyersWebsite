@@ -38,7 +38,7 @@
               "src/styles.css"
             ],
             "outputPath": "dist/landing-page",
-            "baseHref": "/NeedsLawyersWebsite"
+            "baseHref": "/"
           },
           "configurations": {
             "production": {

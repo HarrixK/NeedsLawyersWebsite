@@ -3,16 +3,17 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface EmailRequest {
-  emailAddress: string;
-  subject: string;
-  body: any;
+  Name: string;
+  Email: string;
+  Subject: string;
+  Body: any;
 }
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmailService {
-  private apiUrl = 'http://api.needslawyers.com/api/Notification/SendEmail';
+  private apiUrl = 'http://api.ilawyerapp.com/api/Claims/SendEmailClaim';
 
   constructor(private http: HttpClient) {}
 

@@ -1,5 +1,10 @@
-<section class="container d-flex justify-content-between">
+<section class="container d-flex justify-content-between" [attr.dir]="language === 'ar' ? 'ltr' : 'rtl'">
   <div class="cta-text d-flex justify-content-between align-items-center">
+    <div class="main-heading">
+      <h2 *ngIf="language === 'ar'"><span class="highlight">رأي المستخدمين</span> <br>عن التطبيق</h2>
+      <h2 *ngIf="language === 'en'"><span class="highlight">User Opinions</span> <br>About the App</h2>
+    </div>
+
     <div class="w-auto">
       <div class="user-avatars">
         <div class="avatar-group">
@@ -53,25 +58,20 @@
           </div>
         </div>
         
-        <p class="testimonial-text" *ngIf="language === 'ar'">
+        <p class="testimonial-text" *ngIf="language === 'ar'" [attr.dir]="language === 'ar' ? 'rtl' : 'ltr'">
           فريق من المحامين ذوي الخبرة وملتزمون بتقديم خدمات قانونية<br>
-          شاملة مصممة خصيصاً لموضعك الفريد.
+          شاملة مصممة خصيصاً لوضعك الفريد.
         </p>
-        <p class="testimonial-text" *ngIf="language === 'en'">
+        <p class="testimonial-text" *ngIf="language === 'en'" [attr.dir]="language === 'en' ? 'ltr' : 'rtl'">
           A team of experienced lawyers committed to providing comprehensive<br>
           legal services specifically designed for your unique situation.
         </p>
       </div>
     </div>
-
-    <div class="main-heading">
-      <h2 *ngIf="language === 'ar'"><span class="highlight">رأي المستخدمين</span> <br>عن التطبيق</h2>
-      <h2 *ngIf="language === 'en'"><span class="highlight">User Opinions</span> <br>About the App</h2>
-    </div>
   </div>
 </section>
 
-<div class="cta-app position-absolute w-100" [attr.dir]="language === 'ar' ? 'ltr' : 'rtl'">
+<div class="cta-app position-absolute w-100">
   <div class="container">
     <div class="app-content">
       <div class="download-buttons">
@@ -100,9 +100,9 @@
         </button>
       </div>
       
-      <div class="app-download">
-        <h3 *ngIf="language === 'ar'">قم بتنزيل تطبيق Needs Lawyers<br>على هاتفك المحمول الآن!</h3>
-        <h3 *ngIf="language === 'en'">Download the Needs Lawyers app<br>on your mobile phone now!</h3>
+      <div class="app-download" [attr.dir]="language === 'ar' ? 'rtl' : 'ltr'">
+        <h3 *ngIf="language === 'ar'">قم بتنزيل تطبيق I-Lawyers<br>على هاتفك المحمول الآن!</h3>
+        <h3 *ngIf="language === 'en'">Download the I-Lawyers app<br>on your mobile phone now!</h3>
       </div>
 
       <div class="phone-mockup">
