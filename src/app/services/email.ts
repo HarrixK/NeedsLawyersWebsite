@@ -6,6 +6,7 @@ export interface EmailRequest {
   Name: string;
   Email: string;
   Subject: string;
+  Telephone: string;
   Body: any;
 }
 
@@ -13,7 +14,7 @@ export interface EmailRequest {
   providedIn: 'root'
 })
 export class EmailService {
-  private apiUrl = 'http://api.ilawyerapp.com/api/Claims/SendEmailClaim';
+  private apiUrl = 'https://api.ilawyerapp.com/api/Claims/SendEmailClaim';
 
   constructor(private http: HttpClient) {}
 

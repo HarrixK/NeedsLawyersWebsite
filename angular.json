@@ -37,8 +37,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "outputPath": "dist/landing-page",
-            "baseHref": "/"
+            "outputPath": "dist/landing-page"
           },
           "configurations": {
             "production": {

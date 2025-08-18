@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/fo
 import { Language } from '../../services/language';
 import { EmailRequest, EmailService } from '../../services/email';
 import { Subscription } from 'rxjs';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-contact-us',
@@ -62,17 +63,18 @@ export class ContactUs implements OnInit, OnDestroy {
 
   onSubmit() {
     this.submitted = true;
+    console.log('Current language:', this.language);
     
     if (this.contactForm.valid && !this.isLoading) {
       this.isLoading = true;
       
       const formValue = this.contactForm.value;
-      // subject: this.language === 'ar' ? 'استفسار من موقع NeedsLawyers' : 'Inquiry from NeedsLawyers',
       // Prepare email data
       const emailData: EmailRequest = {
         Name: formValue.firstName + " " + formValue.lastName,
         Email: formValue.email,
         Subject: formValue.subject,
+        Telephone: formValue.phone,
         Body: `firstName=${formValue.firstName}&lastName=${formValue.lastName}&email=${formValue.email}&phone=${formValue.phone}&message=${formValue.message}`
       };
 
@@ -80,25 +82,44 @@ export class ContactUs implements OnInit, OnDestroy {
       this.emailService.sendEmail(emailData).subscribe({
         next: (response) => {
           console.log('Email sent successfully:', response);
+          const successTitle = this.language === 'ar' ? 'نجاح!' : 'Success!';
           const successMessage = this.language === 'ar' 
             ? 'تم إرسال الرسالة بنجاح! سنتواصل معك قريباً.' 
             : 'Message sent successfully! We will contact you soon.';
-          alert(successMessage);
+          Swal.fire({
+            title: successTitle,
+            text: successMessage,
+            icon: 'success',
+            customClass: {
+              popup: this.language === 'en' ? 'swal-ltr' : 'swal-rtl'
+            },
+            confirmButtonText: this.language === 'ar' ? 'حسنًا' : 'OK'
+          });
           this.clearForm();
+          this.isLoading = false;
         },
         error: (error) => {
           console.error('Error sending email:', error);
+          const errorTitle = this.language === 'ar' ? 'خطأ!' : 'Error!';
           const errorMessage = this.language === 'ar' 
             ? 'حدث خطأ في إرسال الرسالة. يرجى المحاولة مرة أخرى.' 
             : 'An error occurred while sending the message. Please try again.';
-          alert(errorMessage);
+          Swal.fire({
+            title: errorTitle,
+            text: errorMessage,
+            icon: 'error',
+            customClass: {
+              popup: this.language === 'en' ? 'swal-ltr' : 'swal-rtl'
+            },
+            confirmButtonText: this.language === 'ar' ? 'حسنًا' : 'OK'
+          });
+          this.isLoading = false;
         },
         complete: () => {
           this.isLoading = false;
         }
       });
     } else if (!this.contactForm.valid) {
-      console.log('Form is invalid');
       this.markAllFieldsAsTouched();
     }
   }
@@ -136,7 +157,7 @@ export class ContactUs implements OnInit, OnDestroy {
       const fieldDisplayName = this.getFieldDisplayName(fieldName);
       const requiredLength = errors['minlength'].requiredLength;
       return this.language === 'ar' 
-        ? `يجب أن يكون ${fieldDisplayName} على الأقل ${requiredLength} أحرف`
+        ? `يجب أن يشمل ${fieldDisplayName} على الأقل ${requiredLength} أحرف`
         : `${fieldDisplayName} must be at least ${requiredLength} characters`;
     }
     if (errors['maxlength']) {

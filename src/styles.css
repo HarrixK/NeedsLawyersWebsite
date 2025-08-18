@@ -77,3 +77,11 @@ body h1,h2,h3, p, a, li, span, div, button {
   font-weight: 500;
   font-style: italic;
 }
+
+.swal-ltr {
+  direction: ltr !important;
+}
+
+.swal-rtl {
+  direction: rtl !important;
+}

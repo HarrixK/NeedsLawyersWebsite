@@ -385,3 +385,6 @@ textarea.form-control {
   padding-right: 0.75rem;
 }
 
+.container-custom:dir(rtl) swal2-modal {
+  direction: rtl;
+}
